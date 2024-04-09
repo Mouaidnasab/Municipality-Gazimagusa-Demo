@@ -1,5 +1,5 @@
 # Municipality-Gazimagusa-Demo
-<<For educational purpose>>
+#For educational purpose
 Aim of the project is to develop Municipality Website for Gazimağusa to improve urban services. The website will give access for city news, online documents, maps, communication. The project team will consist of 3 team members each has his own role in the project from developer, UI/UX designer, database administrator, data analyst, and project manager. The project will include all aspects that will make Gazimağusa a smart city.  
 
 Our team members are:
