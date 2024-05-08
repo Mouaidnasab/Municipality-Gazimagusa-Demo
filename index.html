@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
 </head>
 <body>
 
@@ -16,6 +19,7 @@
         <div class="navbar__container">
             <div class="navbar__logo__container">
                 <a href="/" id="navbar__logo"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/" class="navbar__logo__text"> Gazimağusa Municipality </a>
             </div>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -24,13 +28,13 @@
             </div>
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="/" class="navbar__links"> Login </a>
+                    <a href="/login.html" class="navbar__links"> Login </a>
                 </li>
                 <li class="navbar__item">
                     <a href="/" class="navbar__links"> About </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="/" class="navbar__links"> Contact </a>
+                    <a href="/emergency.html" class="navbar__links"> Contact </a>
                 </li>
                 <li class="navbar__item">
                     <a href="/" class="navbar__links"> Language </a>
@@ -47,97 +51,149 @@
         <div class="Tabs__container">
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/emergency.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Emergency Contact</a></li>
+                <li class="Tabs__btn"><a href="/emergency.html" class="Tabs__button">Emergency</a></li>
             </div>
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/online__bills.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Online Bills</a></li>
+                <li class="Tabs__btn"><a href="/online__bills.html" class="Tabs__button">Online Bills</a></li>
             </div>
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/blocked__cars.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Blocked Cars</a></li>
+                <li class="Tabs__btn"><a href="/blocked__cars.html" class="Tabs__button">Blocked Cars</a></li>
             </div>
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/mayor.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Mayor</a></li>
+                <li class="Tabs__btn"><a href="/mayor.html" class="Tabs__button">Mayor</a></li>
             </div>
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/compliments.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Compliments</a></li>
+                <li class="Tabs__btn"><a href="/compliments.html" class="Tabs__button">Compliments</a></li>
             </div>
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/map.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Map</a></li>
+                <li class="Tabs__btn"><a href="/map.html" class="Tabs__button">Map</a></li>
             </div>
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/blog.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Blog</a></li>
+                <li class="Tabs__btn"><a href="/blog.html" class="Tabs__button">Blog</a></li>
             </div>
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/transportation.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 </div>
-                <li class="Tabs__btn"><a href="/" class="Tabs__button">Transportation</a></li>
+                <li class="Tabs__btn"><a href="/transportation.html" class="Tabs__button">Transportation</a></li>
             </div>
+        </div>
+    </div>
+
+
+    <!-- About the City  Srction -->
+    <h class="Title">About Gazimağusa</h>
+    <div class="Main__center">
+        <div class="City__continer">
+            <h class="City__body">Gazimağusa, in the Turkish Republic of Northern Cyprus (KKTC), is a city steeped in history with roots tracing back to ancient times. It’s a cultural hub with a rich legacy of medieval architecture, renowned for its fortified port and beautiful beaches. The city is also an educational center, home to the Eastern Mediterranean University, and hosts an annual art and culture festival, making it a vibrant blend of the past and the present. 🏰🌊🎓</h>
         </div>
     </div>
     
     <!-- News Srction -->
     <h class="Title">News</h>
-    <div class="Main__center">
-        <div class="News__container">
-            <div class="News__scroll">
-                <div class="card">
-                    <h1 class="News__title">Fire</h1>
-                    <h4 class="News__body">There is fire in gazimgusa emu There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.area.There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.There is fire in gazimgusa emu area.</h4>
-                </div>
-                <div class="card">
-                    <h1 class="News__title">Title</h1>
-                    <h4 class="News__body">Body</h4>
-                </div>
-                <div class="card">
-                    <h1 class="News__title">Title</h1>
-                    <h4 class="News__body">Body</h4>
-                </div>                <div class="card">
-                    <h1 class="News__title">Title</h1>
-                    <h4 class="News__body">Body</h4>
-                </div>                <div class="card">
-                    <h1 class="News__title">Title</h1>
-                    <h4 class="News__body">Body</h4>
-                </div>
-                <div class="card">
-                    <h1 class="News__title">Title</h1>
-                    <h4 class="News__body">Body</h4>
-                </div>
-                <div class="card">
-                    <h1 class="News__title">Title</h1>
-                    <h4 class="News__body">Body</h4>
-                </div>
+    <section class="News__main__section">
+        <h5 class="News__warning">*swipe right for older news</h5>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <span>19/3/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
             </div>
-        </div>
 
-    </div>
+            <div class="swiper-slide">
+              <span>26/3/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
 
-    <!-- About the City  Srction -->
-    <h class="Title">About The City</h>
-    <div class="Main__center">
-        <div class="City__continer">
-            <h class="City__body">Gazimağusa, in the Turkish Republic of Northern Cyprus (KKTC), is a city steeped in history with roots tracing back to ancient times. It’s a cultural hub with a rich legacy of medieval architecture, renowned for its fortified port and beautiful beaches. The city is also an educational center, home to the Eastern Mediterranean University, and hosts an annual art and culture festival, making it a vibrant blend of the past and the present. 🏰🌊🎓</h>
+            <div class="swiper-slide">
+              <span>1/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>5/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>12/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>23/4/2024</span>
+              <h4>National Sovereignty & Children’s Day</h4>
+              <h2>Public Holday</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>29/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>1/5/2024</span>
+              <h4>Workers and Spring Day</h4>
+              <h2>Public Holday</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>8/5/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- footer Section -->
+    <div class="footer__container">
+      <div class="footer__nav">
+        <div class="footer__nav__div"><a href="/" class="footer__nav__text"> About </a></div>
+        <div class="footer__nav__div"><a href="/emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
+        <div class="footer__nav__div"><a href="/" class="footer__nav__text"> Our Services </a></div>
+      </div>
+      <div class="footer__contact">
+        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> <span >Contact</span> </a></div>
+        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> +90(392)6300500 </a></div>
+        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
+        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> Polatpaşa Bulvarı Gazimağusa , KIBRIS </a></div>
+        <div class="footer__social__div">
+          <div class="footer__image__container">
+            <a href="/" id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
+            <a href="/" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
+            <a href="/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
+          </div>
+            
+        </div>
+      </div>
     </div>
 
     <script src="app.js"></script>
