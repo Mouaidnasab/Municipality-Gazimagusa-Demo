@@ -31,7 +31,7 @@
                     <a href="/login.html" class="navbar__links"> Login </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="/" class="navbar__links"> About </a>
+                    <a href="/#about" class="navbar__links"> About </a>
                 </li>
                 <li class="navbar__item">
                     <a href="/emergency.html" class="navbar__links"> Contact </a>
@@ -44,59 +44,65 @@
     </nav>
 
     <!-- Tabs Srction -->
-    <div>
-        <h class="Title">Our Services</h>
-    </div>
+    <h class="Tabs__title">Our Services</h>
     <div class="Main__center">
         <div class="Tabs__container">
+            <a style="text-decoration: none;" href="/emergency.html">
             <div class="Tabs__content">
                 <div class="Tabs__image__container">
-                <a href="/emergency.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
+                  <img src="images/logo.png" id="Tab__image__id">
                 </div>
-                <li class="Tabs__btn"><a href="/emergency.html" class="Tabs__button">Emergency</a></li>
-            </div>
-            <div class="Tabs__content">
-                <div class="Tabs__image__container">
-                <a href="/online__bills.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
-                </div>
-                <li class="Tabs__btn"><a href="/online__bills.html" class="Tabs__button">Online Bills</a></li>
-            </div>
-            <div class="Tabs__content">
-                <div class="Tabs__image__container">
-                <a href="/blocked__cars.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
-                </div>
-                <li class="Tabs__btn"><a href="/blocked__cars.html" class="Tabs__button">Blocked Cars</a></li>
-            </div>
-            <div class="Tabs__content">
-                <div class="Tabs__image__container">
-                <a href="/mayor.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
-                </div>
-                <li class="Tabs__btn"><a href="/mayor.html" class="Tabs__button">Mayor</a></li>
-            </div>
-            <div class="Tabs__content">
-                <div class="Tabs__image__container">
-                <a href="/compliments.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
-                </div>
-                <li class="Tabs__btn"><a href="/compliments.html" class="Tabs__button">Compliments</a></li>
-            </div>
-            <div class="Tabs__content">
-                <div class="Tabs__image__container">
-                <a href="/map.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
-                </div>
-                <li class="Tabs__btn"><a href="/map.html" class="Tabs__button">Map</a></li>
-            </div>
-            <div class="Tabs__content">
-                <div class="Tabs__image__container">
-                <a href="/blog.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
-                </div>
-                <li class="Tabs__btn"><a href="/blog.html" class="Tabs__button">Blog</a></li>
-            </div>
-            <div class="Tabs__content">
-                <div class="Tabs__image__container">
-                <a href="/transportation.html" id="Tabs__image"><img src="images/logo.png" alt="logo" id="main__logo"></a>
-                </div>
-                <li class="Tabs__btn"><a href="/transportation.html" class="Tabs__button">Transportation</a></li>
-            </div>
+                <span >Emergency</span>
+            </div></a>
+            <a style="text-decoration: none;" href="/online__bills.html">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="images/logo.png" id="Tab__image__id">
+                  </div>
+                  <span >Online Bills</span>
+              </div></a>
+            <a style="text-decoration: none;" href="/blocked__cars.html">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="images/logo.png" id="Tab__image__id">
+                  </div>
+                  <span >Blocked Cars</span>
+              </div></a>
+            <a style="text-decoration: none;" href="/mayor.html">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="images/logo.png" id="Tab__image__id">
+                  </div>
+                  <span >Mayor</span>
+              </div></a>
+            <a style="text-decoration: none;" href="/compliments.html">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="images/logo.png" id="Tab__image__id">
+                  </div>
+                  <span >Compliments</span>
+              </div></a>
+            <a style="text-decoration: none;" href="/map.html">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="images/logo.png" id="Tab__image__id">
+                  </div>
+                  <span >Map</span>
+              </div></a>
+            <a style="text-decoration: none;" href="/blog.html">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="images/logo.png" id="Tab__image__id">
+                  </div>
+                  <span >Blog</span>
+              </div></a>
+            <a style="text-decoration: none;" href="/transportation.html">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="images/logo.png" id="Tab__image__id">
+                  </div>
+                  <span id="about">Transportation</span>
+              </div></a>
         </div>
     </div>
 
@@ -111,7 +117,7 @@
     
     <!-- News Srction -->
     <h class="Title">News</h>
-    <section class="News__main__section">
+    <section id="news" class="News__main__section">
         <h5 class="News__warning">*swipe right for older news</h5>
         <div class="swiper">
           <div class="swiper-wrapper">
@@ -176,20 +182,20 @@
     <!-- footer Section -->
     <div class="footer__container">
       <div class="footer__nav">
-        <div class="footer__nav__div"><a href="/" class="footer__nav__text"> About </a></div>
+        <div class="footer__nav__div"><a href="#about" class="footer__nav__text"> About </a></div>
         <div class="footer__nav__div"><a href="/emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
         <div class="footer__nav__div"><a href="/" class="footer__nav__text"> Our Services </a></div>
       </div>
       <div class="footer__contact">
-        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> <span >Contact</span> </a></div>
-        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> +90(392)6300500 </a></div>
-        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
-        <div class="footer__contact__div"><a href="/" class="footer__contact__text"> Polatpaşa Bulvarı Gazimağusa , KIBRIS </a></div>
+        <div class="footer__contact__div"><span >Contact</span></div>
+        <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
+        <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
+        <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
         <div class="footer__social__div">
           <div class="footer__image__container">
-            <a href="/" id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
-            <a href="/" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
-            <a href="/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
+            <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
+            <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
+            <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
           </div>
             
         </div>
