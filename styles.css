@@ -5,6 +5,8 @@
     font-family: 'Tilt Neon', Courier, monospace;
 }
 
+
+/*Navbar*/
 .navbar {
     background-color: #fff;
     height: 80px;
@@ -75,6 +77,16 @@
     color: #343434;
     font-size: 16px;
 
+
+}
+
+.navbar__weather {
+    position: absolute;
+    top: 20px;
+    margin-left: 70px;
+    border-radius: 21px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .09);
+  
 }
 
 @media screen and (max-width: 960px) {
@@ -154,6 +166,7 @@
     .navbar__toggle .bar {
         display: block;
         cursor: pointer;
+        border-radius: 2px;
     }
 
     #mobile-menu.is-active .bar:nth-child(2) {
@@ -177,6 +190,8 @@
     margin-top: 30px;
 }
 
+
+/*Tabs*/
 .Tabs__container {
     grid-gap: 20px;
     display: grid;
@@ -237,6 +252,8 @@
     font-size: 24px;
     font-weight: 1000;
 }
+
+
 .Tabs__title {
     margin-top: 20px;
     display: flex;
@@ -246,6 +263,15 @@
     text-align: center;
     font-size: 24px;
     font-weight: 1000;
+}
+
+
+/*Weather wedget main screen*/
+.weather__container {
+    margin: 40px 20px;
+    border-radius: 20px;
+    border: 0.01px solid rgba(32, 42, 80, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .04);
 }
 
 /* News Section */
@@ -336,7 +362,7 @@
     text-align: center;
 }
 
-
+/*Footer*/
 .footer__container {
     position: relative;
     background-color: #343434;
@@ -399,4 +425,17 @@
     padding-bottom: 100%;
     justify-content: center;
 
+}
+
+/*Info*/
+.Info__contact__text {
+    text-decoration: none;
+    color:  #fe7711;
+    margin-top: 10;
+    
+}
+
+.Info__continer {
+    padding: 8px;
+    
 }
