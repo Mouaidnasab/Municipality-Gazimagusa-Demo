@@ -230,13 +230,13 @@
     align-items: center;
     padding-bottom: 100%;
     justify-content: center;
-
 }
+
 #Tab__image__id {
-    width: 68%;
+    width: 80%;
     margin:1.6% 0;
-
 }
+
 .Tabs__content:hover {
     transition: all 0.3s ease;
     transform:scale(1.05)
