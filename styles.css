@@ -439,3 +439,86 @@
     padding: 8px;
     
 }
+
+/*Mayor*/
+.mayor__container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.mayor__container h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+.mayor__container span {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    font-size: 40px;
+    width: 100px;
+    font-weight: 900;
+    
+}
+
+.mayor__image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 65%;
+}
+#mayor_image {
+    height: 100%;
+    filter: drop-shadow( 0 0 10px rgba(0, 0, 0, .2));
+}
+
+.Mayor__body {
+    display: flex;
+    text-align: center;
+    margin: 20px 10px;
+    
+}
+
+.form {
+    display:flexbox;
+    padding: 20px
+}
+
+.input__field {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .06);
+    border: 0;
+    overflow-x: auto;
+    font-size: 17px;
+}
+
+input {
+    padding-left: 10px;
+}
+
+textarea {
+    padding-left: 10px;
+}
+
+.mayor__button {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.mayor__button button {
+    font-size: 20px;
+    color:#fe7711;
+    background-color:#343434;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .06);
+    margin-bottom: 20px
+}
