@@ -529,7 +529,7 @@ textarea {
 
 details {
 	position: relative;
-	width: 350px;
+	width: 100%;
 	margin-right: 1rem;
     margin-bottom: 20px;
 }
@@ -564,8 +564,7 @@ details[open] summary:before {
 
 summary:after {
 	content: '';
-	display: inline-block;
-	float: right;
+	float:inline-end;
 	width: .5rem;
 	height: .5rem;
 	border-bottom: 1px solid currentColor;
@@ -664,5 +663,287 @@ label span {
 }
 /*End of Mayor*/
 
+/*ali css
+/* Reset default margin and padding 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/*skill sharing*/
+/* Base styles 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styles for bill container 
+.bill-container {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.bill-container h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.bill-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bill-container li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Additional styling for checkboxes 
+.bill-container input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Proceed to Payment button styles 
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fe7711;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c9671c;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Payment form styles 
+.payment-form {
+    margin-top: 20px;
+}
+
+.payment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="email"],
+.payment-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.payment-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #fe7711;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #c9671c;
+}
+
+.container_sewege{
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-weight: bold;
+}
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+textarea#notes {
+    width: 50px;
+    height: 20px;
+    resize: none; /* You can adjust this height as needed 
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 80%;
+    }
+}
+
+h2{
+    margin-bottom: 15px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    padding-top: 30px;
+}
+
+.main{
+    display: grid;
+    place-items: center;
+    margin: 0;
+}
+
+
+.routes{
+    justify-content: center;
+    padding-top: 50px;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin-right: 10px;
+    /*align-items: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 50px 30px 50px 20px;
+    gap: 40px;
+    border-radius: 20px;
+
+}
+
+.route_img{
+    max-width: 280px;
+    width: 25vm;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 30px;
+    margin-left: -60px;
+    border-radius: inherit;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+}
+
+.route_h2{
+    font-size: 24px;
+    font-weight: 400px;
+    margin-top: 30px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    place-content: center;
+}
+
+.departure_times{
+    border-collapse: separate;
+    border-spacing: 20px;
+
+}
+
+.departure_times td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.return_head{
+    padding: 15px;
+}
+
+.route{
+    width: 100%;
+}
+
+@media screen and (max-width:900px) {
+    .routes{
+        flex-direction: column;
+        place-items: center;
+        margin: 100px 0px;
+        padding: 0px 50px 60px 50px;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .departure_times {
+        width: 100%;
+        max-width: 500px; /* Adjust as needed 
+        margin-top: 20px; /* Add spacing between image and table 
+      }
+
+      .departure_times table {
+        margin: 0 auto; /* Center the table horizontally 
+      }
+
+    .route_img{
+        position: static;
+        max-width: 100%;
+        margin: 20px auto;
+        display: block;
+        text-align: center;
+    }
+    
+}
+/*end of ali css*/

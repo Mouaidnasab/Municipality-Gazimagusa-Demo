@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewege</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="styles_tickets.css"/>
+</head>
+<body>
+
+    <!-- Navbar Srction -->
+    <nav class="navbar"> 
+        <div class="navbar__container">
+            <div class="navbar__logo__container">
+                <a href="/" id="navbar__logo"><img src="/images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/" class="navbar__logo__text"> Gazimağusa Municipality </a>
+            </div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+              <li class="navbar__item">
+                  <a href="/login.html" class="navbar__links"> Login </a>
+              </li>
+              <li class="navbar__item">
+                  <a href="/#about" class="navbar__links"> About </a>
+              </li>
+              <li class="navbar__item">
+                  <a href="/emergency.html" class="navbar__links"> Contact </a>
+              </li>
+              <li class="navbar__item">
+                  <a href="/" class="navbar__links"> Language </a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+
+    <h class="Tabs__title">Tree Pruning Request</h>
+    <div class="container_sewege">
+        <h2>Fill out the form:</h2>
+        <form action="submit.php" method="post">
+            <div class="form-group">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required>
+            </div>
+            <div class="form-group">
+                <label for="citizen_id">Citizen ID:</label>
+                <input type="text" id="citizen_id" name="citizen_id" required>
+            </div>
+            <div class="form-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phone_number" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+
+
+
+
+    <div class="footer__container">
+        <div class="footer__nav">
+          <div class="footer__nav__div"><a href="/#about" class="footer__nav__text"> About </a></div>
+          <div class="footer__nav__div"><a href="/emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
+          <div class="footer__nav__div"><a href="/" class="footer__nav__text"> Our Services </a></div>
+        </div>
+        <div class="footer__contact">
+          <div class="footer__contact__div"><span >Contact</span></div>
+          <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
+          <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
+          <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
+          <div class="footer__social__div">
+            <div class="footer__image__container">
+              <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
+              <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
+              <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  </body>
+  </html>
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Bills for Payment</title>
+    <link rel="stylesheet" href="tick.css">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+</head>
+<body>
+
+    <!-- Navbar Srction -->
+    <nav class="navbar"> 
+        <div class="navbar__container">
+            <div class="navbar__logo__container">
+                <a href="/" id="navbar__logo"><img src="/images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/" class="navbar__logo__text"> Gazimağusa Municipality </a>
+            </div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/login.html" class="navbar__links"> Login </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/#about" class="navbar__links"> About </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/emergency.html" class="navbar__links"> Contact </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links"> Language </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<body>
+    <div class="container">
+        <h1>Select Bills for Payment</h1>
+        
+        <!-- Bill Display Container -->
+        <div class="bill-container">
+            <h2>Bills Available</h2>
+            <form id="billForm" class="bill-form">
+                <ul>
+                    <li>
+                        <input type="checkbox" id="electricity" name="bill" value="Electricity" data-amount="100">
+                        <label for="electricity">Electricity Bill - $100</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="water" name="bill" value="Water" data-amount="50">
+                        <label for="water">Water Bill - $50</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="internet" name="bill" value="Internet" data-amount="80">
+                        <label for="internet">Internet Bill - $80</label>
+                    </li>
+                    <!-- Add more bills here as needed -->
+                </ul>
+            </form>
+        </div>
+        
+        <!-- Proceed to Payment Button -->
+        <button id="proceedBtn">Proceed to Payment</button>
+        
+        <!-- Container to hold payment page content -->
+        <div id="paymentContent" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('proceedBtn').addEventListener('click', function() {
+            // Get selected bills
+            const selectedBills = Array.from(document.querySelectorAll('input[name="bill"]:checked'));
+            
+            // Construct the query parameter with bills and their amounts
+            const selectedBillsQuery = selectedBills.map(bill => bill.value + ':' + bill.dataset.amount).join(',');
+            const paymentPageUrl = `payment.html?bills=${selectedBillsQuery}`;
+
+            // Redirect to payment page with selected bills as query parameter
+            fetch(paymentPageUrl)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('paymentContent').innerHTML = html;
+                    document.getElementById('paymentContent').style.display = 'block';
+                })
+                .catch(error => console.error('Error fetching payment page:', error));
+        });
+    </script>
+
+<div class="footer__container">
+    <div class="footer__nav">
+      <div class="footer__nav__div"><a href="#about" class="footer__nav__text"> About </a></div>
+      <div class="footer__nav__div"><a href="/emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
+      <div class="footer__nav__div"><a href="/" class="footer__nav__text"> Our Services </a></div>
+    </div>
+    <div class="footer__contact">
+      <div class="footer__contact__div"><span >Contact</span></div>
+      <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
+      <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
+      <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
+      <div class="footer__social__div">
+        <div class="footer__image__container">
+          <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
+          <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
+          <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
+        </div>
+          
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>
