@@ -437,7 +437,13 @@
 
 .Info__continer {
     padding: 8px;
-    
+    left: 20px;
+}
+
+.emergency__contact {
+    position: relative;
+    margin: 20px 0px;
+    left: 26px;
 }
 
 /*Mayor*/
