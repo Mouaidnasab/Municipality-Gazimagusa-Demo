@@ -669,8 +669,164 @@ label span {
 }
 /*End of Mayor*/
 
-/*ali css*/
+/*skill sharing*/
+.skill__body {
+    margin: 0;
+    padding: 0 20px 20px 20px;
+}
 
+.skill-sharing {
+    margin: 0 auto;
+}
+
+.post {
+    background: white;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .06);
+}
+
+.post-info {
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.distance {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.type__continer {
+    display: flex;
+    align-items: center;
+}
+
+.type {
+    font-weight: bold;
+}
+
+.type__image__container{
+    height: 47px;
+    width: 54px;
+    align-items: center;
+    justify-content: center;
+}
+
+#type__image__id {
+    width: 100%;
+}
+
+
+.post-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .06);
+}
+
+.description {
+    margin-bottom: 10px;
+    font-size: 16px;    
+}
+
+.help-button {
+    background-color: #ff7b00;
+    color: white;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.details {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+}
+
+.new-post-button {
+    background-color: #fff;
+    color: #343434;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+.new-post-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Add Post Sharing */
+.add-post {
+    background: white;
+    padding: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.add-post h2 {
+    margin-top: 0;
+}
+
+.add-post form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-post label {
+    margin-top: 10px;
+}
+
+.add-post input {
+    margin-top: 5px;
+    padding: 10px;
+    border: 0px ;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .06);
+}
+
+.add-post textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 0px ;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .06);
+
+}
+
+.add-post button {
+    background-color: #ff7b00;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+
+
+/*ali css*/
 .bills__body{
     display: grid;
     place-items: center;
@@ -1169,6 +1325,4 @@ input[type="file"] {
     font-size: 14px;
     color: #555;
 }
-
-
 /*end of ali css*/
