@@ -52,14 +52,13 @@
         </div>
     </nav>
 
-<body>
-    <div class="container">
+    <div class="container_a">
         <h1>Select Bills for Payment</h1>
         
         <!-- Bill Display Container -->
-        <div class="bill-container">
-            <h2>Bills Available</h2>
-            <form id="billForm" class="bill-form">
+        <div class="bill-container_a">
+            <h2 class="h2_a">Bills Available</h2>
+            <form id="billForm_a" class="bill-form">
                 <ul>
                     <li>
                         <input type="checkbox" id="electricity" name="bill" value="Electricity" data-amount="100">
@@ -78,32 +77,52 @@
             </form>
         </div>
         
-        <!-- Proceed to Payment Button -->
-        <button id="proceedBtn">Proceed to Payment</button>
+    <button id="proceedBtn">Proceed to Payment</button>
         
-        <!-- Container to hold payment page content -->
-        <div id="paymentContent" style="display: none;"></div>
+        <!-- Container to hold payment form -->
+        <div id="paymentForm" style="display: none;">
+            <h2 class="h2_a2">Online Bill Payment</h2>
+            <form action="#" method="post" class="payment-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <input type="hidden" id="total" name="total">
+                
+                <label for="amount">Total Amount:</label>
+                <input type="text" id="amount" name="amount" readonly>
+                
+                <label for="card">Credit Card Number:</label>
+                <input type="text" id="card" name="card" required>
+                
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                
+                <button id="confirmPaymentBtn">Confirm Payment</button>
+            </form>
+        </div>
     </div>
 
     <script>
         document.getElementById('proceedBtn').addEventListener('click', function() {
-            // Get selected bills
             const selectedBills = Array.from(document.querySelectorAll('input[name="bill"]:checked'));
-            
-            // Construct the query parameter with bills and their amounts
             const selectedBillsQuery = selectedBills.map(bill => bill.value + ':' + bill.dataset.amount).join(',');
-            const paymentPageUrl = `payment.html?bills=${selectedBillsQuery}`;
 
-            // Redirect to payment page with selected bills as query parameter
-            fetch(paymentPageUrl)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('paymentContent').innerHTML = html;
-                    document.getElementById('paymentContent').style.display = 'block';
-                })
-                .catch(error => console.error('Error fetching payment page:', error));
+            // Display the payment form container
+            document.getElementById('paymentForm').style.display = 'block';
+
+            // Calculate total amount
+            const totalAmount = selectedBills.reduce((total, bill) => total + parseFloat(bill.dataset.amount), 0);
+            document.getElementById('amount').value = `$${totalAmount.toFixed(2)}`;
+            document.getElementById('total').value = totalAmount;
         });
     </script>
+
 
 <div class="footer__container">
     <div class="footer__nav">
