@@ -769,6 +769,7 @@ label span {
     font-size: 24px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
 }
 .new-post-button:hover {
     background-color: #f0f0f0;
