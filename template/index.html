@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
+</head>
+<body>
+
+    <!-- Navbar Srction -->
+    <nav class="navbar"> 
+        <div class="navbar__container">
+            <div class="navbar__logo__container">
+                <a href="/" id="navbar__logo"><img src="../static/images/logo.png" alt="logo" id="main__logo"></a>
+                <a href="/" class="navbar__logo__text"> Gazimağusa Municipality </a>
+            </div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="{{ url_for('login') }}" class="navbar__links"> Login to Admin</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/#about" class="navbar__links"> About </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="{{ url_for('emergency') }}" class="navbar__links"> Contact </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tabs Srction -->
+    <h class="Tabs__title">Our Services</h>
+    <div class="Main__center">
+        <div class="Tabs__container">
+            <a style="text-decoration: none;" href="{{ url_for('map') }}">
+            <div class="Tabs__content">
+                <div class="Tabs__image__container">
+                  <img src="../static/images/Map.png" id="Tab__image__id">
+                </div>
+                <span >Map</span>
+            </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('online__tickets') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/online_tickets.png" id="Tab__image__id">
+                  </div>
+                  <span >Online Tickets</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('blocked__cars') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/cars.png" id="Tab__image__id">
+                  </div>
+                  <span >Blocked Cars</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('mayor') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/mayor.png" id="Tab__image__id">
+                  </div>
+                  <span >Mayor</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('complaints') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/compliments.png" id="Tab__image__id">
+                  </div>
+                  <span >Complaint</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('emergency') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/emergency.png" id="Tab__image__id">
+                  </div>
+                  <span >Emergency</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('blog') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/blog.png" id="Tab__image__id">
+                  </div>
+                  <span >Blog</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('transportation') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/transportation.png" id="Tab__image__id">
+                  </div>
+                  <span id="about">Transportation</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('skill__sharing') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/skill_sharing.png" id="Tab__image__id">
+                  </div>
+                  <span id="about">Skill Sharing</span>
+              </div></a>
+            <a style="text-decoration: none;" href="{{ url_for('digital__voting') }}">
+              <div class="Tabs__content">
+                  <div class="Tabs__image__container">
+                    <img src="../static/images/digital_voting.png" id="Tab__image__id">
+                  </div>
+                  <span id="about">Digital Voting</span>
+              </div></a>
+        </div>
+    </div>
+
+
+    <!-- About the City  Srction -->
+    <h class="Title">About Gazimağusa</h>
+    <div class="Main__center">
+        <div class="City__continer">
+            <h class="City__body">Gazimağusa, in the Turkish Republic of Northern Cyprus (KKTC), is a city steeped in history with roots tracing back to ancient times. It’s a cultural hub with a rich legacy of medieval architecture, renowned for its fortified port and beautiful beaches. The city is also an educational center, home to the Eastern Mediterranean University, and hosts an annual art and culture festival, making it a vibrant blend of the past and the present. 🏰🌊🎓</h>
+        </div>
+    </div>
+    
+    <!-- Weather Widget -->
+    <div class="weather__container">
+    <a style="border-radius: 20px; " class="weatherwidget-io" href="https://forecast7.com/en/35d2933d84/famagusta/" data-label_1="Gazimağusa" data-font="Noto Sans" data-icons="Climacons Animated" data-days="3" data-theme="pure" data-textcolor="#343434" data-highcolor="#343434" data-lowcolor="#343434" data-suncolor="#fe7711" >Gazimağusa</a>
+    </div>
+
+    <!-- News Srction -->
+    <h class="Title">News</h>
+    <section id="news" class="News__main__section">
+        <h5 class="News__warning">*swipe right for older news</h5>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <span>19/3/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>26/3/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>1/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>5/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>12/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>23/4/2024</span>
+              <h4>National Sovereignty & Children’s Day</h4>
+              <h2>Public Holday</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>29/4/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>1/5/2024</span>
+              <h4>Workers and Spring Day</h4>
+              <h2>Public Holday</h2>
+            </div>
+
+            <div class="swiper-slide">
+              <span>8/5/2024</span>
+              <h4>body</h4>
+              <h2>Title</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer Section -->
+    <div class="footer__container">
+      <div class="footer__nav">
+        <div class="footer__nav__div"><a href="{{ url_for('home') }}#about" class="footer__nav__text"> About </a></div>
+        <div class="footer__nav__div"><a href="{{ url_for('emergency') }}" class="footer__nav__text"> Emergancy Contact </a></div>
+        <div class="footer__nav__div"><a href="{{ url_for('home') }}" class="footer__nav__text"> Our Services </a></div>
+      </div>
+      <div class="footer__contact">
+        <div class="footer__contact__div"><span >Contact</span></div>
+        <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
+        <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
+        <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
+        <div class="footer__social__div">
+          <div class="footer__image__container">
+            <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="../static/images/whatsapp.png" alt="logo" id="main__logo"></a>
+            <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="../static/images/facebook.png" alt="logo" id="main__logo"></a>
+            <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="../static/images/instagram.png" alt="logo" id="main__logo"></a>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

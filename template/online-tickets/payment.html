@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online Bills</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+
+  
+</head>
+
+<body>
+    <div class="container_a">
+        <h1>Online Bill Payment</h1>
+        
+        <!-- Display Total Amount -->
+        <div id="totalAmount_a"></div>
+        
+        <form action="#" method="post" class="payment-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <!-- Hidden field to store total amount -->
+            <input type="hidden" id="total" name="total">
+            
+            <label for="amount">Bill Amount:</label>
+            <input type="number" id="amount" name="amount" min="0" step="any" required>
+            
+            <label for="card">Credit Card Number:</label>
+            <input type="text" id="card" name="card" required>
+            
+            <label for="expiry">Expiry Date:</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            
+            <!-- Add other necessary form fields here -->
+            
+            <!-- Proceed to Payment Button -->
+            <button id="proceedBtn_a">Proceed to Payment</button>
+        </form>
+    </div>
+</body>
+</html>

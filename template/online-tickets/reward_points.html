@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewege</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+
+    <!-- Navbar Srction -->
+    <nav class="navbar"> 
+        <div class="navbar__container">
+            <div class="navbar__logo__container">
+                <a href="{{ url_for('home') }}" id="navbar__logo"><img src="../static/images/logo.png" alt="logo" id="main__logo"></a>
+                <div class="navbar__weather">
+                  <div  id="iddea7dd60ff4ec" a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'>Weather Data Source: <a href="https://sharpweather.com/weather_famagusta/30_days/">30 days weather Famagusta</a></div></div><script async src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"></script>
+            </div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+              <li class="navbar__item">
+                <a href="{{ url_for('home') }}" class="navbar__links"> Our Services </a>
+              </li>
+              <li class="navbar__item">
+                  <a href="{{ url_for('home') }}#about" class="navbar__links"> About </a>
+              </li>
+              <li class="navbar__item">
+                  <a href="{{ url_for('emergency') }}" class="navbar__links"> Contact </a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+
+
+
+
+<body class="body_a">
+    <div class="container_a">
+        <h1 class="h1_a">My Reward Points</h1>
+        <div class="user-info">
+            <p>Citizen ID: <strong>12345</strong></p>
+            <p>Name: <strong>John Doe</strong></p>
+        </div>
+        <div class="points-info">
+            <p>Earn more points to unlock rewards!</p>
+        </div>
+        <div class="earn-points">
+            <h2>Earn More Points</h2>
+            <ul>
+                <li>Submit a Complaint: +50 Points</li>
+                <li>Participate in Survey: +20 Points</li>
+                <li>Use Public Transport: +10 Points</li>
+            </ul>
+        </div>
+        <div class="transactions">
+            <h2>Recent Transactions</h2>
+            <ul>
+                <li>2024-05-01: Submitted Complaint (+50 Points)</li>
+                <li>2024-04-28: Participated in Survey (+20 Points)</li>
+                <li>2024-04-25: Used Public Transport (+10 Points)</li>
+            </ul>
+        </div>
+        <div class="redeem-section">
+            <label for="redeemPoints"><strong>Redeem Points:</strong></label>
+            <select class="select_a" id="redeemPoints">
+                <option value="0">Select Option</option>
+                <option value="30">Free Bus Ticket (30 points)</option>
+                <option value="70">Discount on Services/Merchandise (20% discount, 70 points)</option>
+                <option value="100">Cash ($5 for 100 points)</option>
+            </select>
+            <button class="button_a" onclick="redeemPoints()">Redeem</button>
+            <p id="redeemMessage" class="redeem-message"></p> <!-- Message element -->
+        </div>
+        <p id="pointsBalance">Current Points Balance: <strong>80 Points</strong></p>
+    </div>
+    
+    <script>
+        var pointsBalance = 80; // Example current points balance
+    
+        function redeemPoints() {
+            var redeemSelect = document.getElementById("redeemPoints");
+            var redeemOption = redeemSelect.options[redeemSelect.selectedIndex];
+            var redeemMessage = document.getElementById("redeemMessage");
+            var pointsToRedeem = parseInt(redeemOption.value);
+    
+            // Reset message
+            redeemMessage.textContent = "";
+    
+            if (pointsToRedeem === 0) {
+                redeemMessage.textContent = "Please select a redemption option.";
+                return;
+            }
+    
+            if (pointsBalance < pointsToRedeem) {
+                redeemMessage.textContent = "Error: You cannot redeem more points than you have.";
+                return;
+            }
+    
+            // Update points balance
+            pointsBalance -= pointsToRedeem;
+            document.getElementById("pointsBalance").innerText = "Current Points Balance: " + pointsBalance + " Points";
+    
+            // Handle redemption options
+            if (pointsToRedeem === 30) {
+                redeemMessage.textContent = "Successfully redeemed to a free bus ticket!";
+            } else if (pointsToRedeem === 70) {
+                redeemMessage.textContent = "Successfully redeemed. You get a 20% discount on services/merchandise!";
+            } else if (pointsToRedeem === 100) {
+                redeemMessage.textContent = "Successfully redeemed. You get $5 for every 100 points!";
+            }
+        }
+    </script>
+    
+    <!-- footer Section -->
+    <div class="footer__container">
+        <div class="footer__nav">
+          <div class="footer__nav__div"><a href="{{ url_for('home') }}#about" class="footer__nav__text"> About </a></div>
+          <div class="footer__nav__div"><a href="{{ url_for('emergency') }}" class="footer__nav__text"> Emergancy Contact </a></div>
+          <div class="footer__nav__div"><a href="{{ url_for('home') }}" class="footer__nav__text"> Our Services </a></div>
+        </div>
+        <div class="footer__contact">
+          <div class="footer__contact__div"><span >Contact</span></div>
+          <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
+          <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
+          <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
+          <div class="footer__social__div">
+            <div class="footer__image__container">
+              <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="../static/images/whatsapp.png" alt="logo" id="main__logo"></a>
+              <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="../static/images/facebook.png" alt="logo" id="main__logo"></a>
+              <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="../static/images/instagram.png" alt="logo" id="main__logo"></a>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+  
+
+
+
+</body>
+</html>
