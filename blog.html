@@ -9,18 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-  />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 </head>
 <body>
 
-    <!-- Navbar Srction -->
-    <nav class="navbar"> 
+    <!-- Navbar Section -->
+    <nav class="navbar">
         <div class="navbar__container">
             <div class="navbar__logo__container">
                 <a href="/" id="navbar__logo"><img src="images/logo.png" alt="logo" id="main__logo"></a>
                 <div class="navbar__weather">
-                  <div  id="iddea7dd60ff4ec" a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'>Weather Data Source: <a href="https://sharpweather.com/weather_famagusta/30_days/">30 days weather Famagusta</a></div></div><script async src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"></script>
+                  <div id="iddea7dd60ff4ec" a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'>Weather Data Source: <a href="https://sharpweather.com/weather_famagusta/30_days/">30 days weather Famagusta</a></div></div><script async src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"></script>
             </div>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -28,44 +27,64 @@
                 <span class="bar"></span>
             </div>
             <ul class="navbar__menu">
-              <li class="navbar__item">
-                  <a href="/login.html" class="navbar__links"> Login </a>
-              </li>
-              <li class="navbar__item">
-                  <a href="/#about" class="navbar__links"> About </a>
-              </li>
-              <li class="navbar__item">
-                  <a href="/emergency.html" class="navbar__links"> Contact </a>
-              </li>
-              <li class="navbar__item">
-                  <a href="/" class="navbar__links"> Language </a>
-              </li>
-          </ul>
+                <li class="navbar__item">
+                    <a href="/login.html" class="navbar__links">Login</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/#about" class="navbar__links">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/emergency.html" class="navbar__links">Contact</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Language</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
+  <!-- Add Post Button -->
+  <button id="addPostButton" class="add-post-button">Add Post</button>
 
-    <!-- footer Section -->
+  <!-- Post Form -->
+  <main id="postForm" class="main__post hidden">
+      <div class="post__container">
+          <label for="C_ID" class="post__label">Citizen ID:</label>
+          <input type="text" id="C_ID" class="post__input">
+      </div>
+      <div class="post__container">
+          <label for="B_title" class="post__label">Title:</label>
+          <input type="text" id="B_title" class="post__input">
+      </div>
+      <div class="post__container">
+          <label for="B_body" class="post__label">Body:</label>
+          <textarea id="B_body" class="post__textarea"></textarea>
+      </div>
+      <button id="post" class="post__button">Post</button>
+  </main>
+
+<script src="post.js"></script>
+
+    <!-- Footer Section -->
     <div class="footer__container">
-      <div class="footer__nav">
-        <div class="footer__nav__div"><a href="/#about" class="footer__nav__text"> About </a></div>
-        <div class="footer__nav__div"><a href="/emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
-        <div class="footer__nav__div"><a href="/" class="footer__nav__text"> Our Services </a></div>
-      </div>
-      <div class="footer__contact">
-        <div class="footer__contact__div"><span >Contact</span></div>
-        <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
-        <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
-        <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
-        <div class="footer__social__div">
-          <div class="footer__image__container">
-            <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
-            <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
-            <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
-          </div>
-            
+        <div class="footer__nav">
+            <div class="footer__nav__div"><a href="/#about" class="footer__nav__text">About</a></div>
+            <div class="footer__nav__div"><a href="/emergency.html" class="footer__nav__text">Emergency Contact</a></div>
+            <div class="footer__nav__div"><a href="/" class="footer__nav__text">Our Services</a></div>
         </div>
-      </div>
+        <div class="footer__contact">
+            <div class="footer__contact__div"><span>Contact</span></div>
+            <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text">+90 (392) 630 05 00</a></div>
+            <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text">info@gazimagusabelediyesi.org</a></div>
+            <div class="footer__contact__div"><span>Polatpaşa Bulvarı Gazimağusa, KIBRIS</span></div>
+            <div class="footer__social__div">
+                <div class="footer__image__container">
+                    <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
+                    <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
+                    <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>

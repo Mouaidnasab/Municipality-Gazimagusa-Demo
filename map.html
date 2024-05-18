@@ -1,17 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.6.0/maps/maps.css'/>
+  <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.6.0/maps/maps-web.min.js'></script>
+  <link rel='stylesheet' type='text/css' href='../assets/ui-library/index.css'/>
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Tilt Neon', Courier, monospace;
+      }
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      margin-top: 20px;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .map-controls {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 5px;
+      font-family: 'Tilt Neon', Courier, monospace; /* Apply the font-family */
+      box-sizing: border-box; /* Apply the box-sizing */
+   }
+
+    .map-controls button {
+      margin: 5px;
+      padding:  10px 15px;
+      background-color: #fe7711;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .map-controls button:hover {
+      background-color: #d45a00;
+    }
+    .button-box {
+        display: none;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    
+    .FilterS {
+      display: flex;
+      justify-content: center;
+    }
+
+    .FilterS button {
+      font-size: 20px;
+      font-weight: bold;
+      color:#fe7711;
+      background-color:#343434;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .06);
+      margin-bottom: 20px
+      
+    }
+    .filter-dropdown {
+      display: none;
+      position: relative;
+      top: 0px;
+      right: 0;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 0px;
+    }
+
+    .filter-dropdown.active {
+      border: dashed orange;
+      display: block;
+    }
+  </style>
 </head>
+
+
 <body>
 
     <!-- Navbar Srction -->
@@ -43,28 +133,270 @@
           </ul>
         </div>
     </nav>
-
-    <!-- footer Section -->
-    <div class="footer__container">
-      <div class="footer__nav">
-        <div class="footer__nav__div"><a href="/#about" class="footer__nav__text"> About </a></div>
-        <div class="footer__nav__div"><a href="/emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
-        <div class="footer__nav__div"><a href="/" class="footer__nav__text"> Our Services </a></div>
-      </div>
-      <div class="footer__contact">
-        <div class="footer__contact__div"><span >Contact</span></div>
-        <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
-        <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
-        <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
-        <div class="footer__social__div">
-          <div class="footer__image__container">
-            <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"></a>
-            <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"></a>
-            <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"></a>
-          </div>
-        </div>
+    <div class="FilterS">
+    <button id="filterButton">Filter</button>
+    </div>
+    <div class="filter-dropdown">
+      <div class="map-controls">
+        <button id="showHospitals">Hospitals</button>
+        <button id="showPharmacies">Show Pharmacies</button>
+        <button id="showGovernment">Show Government Buildings</button>
       </div>
     </div>
+
+  <script>
+     // Get references to the filter button and the button box
+    var filterButton = document.getElementById('filterButton');
+    var buttonBox = document.querySelector('.button-box');
+
+    // Add a click event listener to the filter button
+    var filterButton = document.getElementById('filterButton');
+    var filterDropdown = document.querySelector('.filter-dropdown');
+
+    // Add a click event listener to the filter button
+    filterButton.addEventListener('click', function() {
+        // Toggle the active class of the filter dropdown
+        filterDropdown.classList.toggle('active');
+    });
+  </script>
+
+
+    <div id='map' class='map'>
+      <div class='tt-overlay-panel -center js-message-box' hidden>
+          <button class='tt-overlay-panel__close js-message-box-close'></button>
+          <span class='tt-overlay-panel__content'></span>
+      </div>
+  </div>
+
+  <div id="marker-list"></div>
+
+
+
+  <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.1/maps/maps-web.min.js'></script>
+
+    <script>
+      var map = tt.map({
+        container: 'map',
+        key: 'usdy0TjAJM12NoAT4Z1D4A50G8mnM5N0',
+        center: [ 33.919046994423,35.13951063373529],
+        zoom: 14,
+      });
+
+      var popupOffsets = {
+        top: [0, 0],
+        bottom: [0, -70],
+        'bottom-right': [0, -70],
+        'bottom-left': [0, -70],
+        left: [25, -35],
+        right: [-25, -35]
+      }
+
+      var hospitals = [];
+      var pharmacies = [];
+      var governmentBuildings = [];
+
+      // Function to create a marker
+      function createMarker(lngLat, name, address, type) {
+          var marker = new tt.Marker().setLngLat(lngLat).addTo(map);
+          var popup = new tt.Popup({ offset: [0, -70] }).setHTML("<b>" + name + "</b><br/>" + address);
+          marker.setPopup(popup);
+
+          // Push the marker into the corresponding array
+          switch (type) {
+              case 'hospital':
+                  hospitals.push(marker);
+                  break;
+              case 'pharmacy':
+                  pharmacies.push(marker);
+                  break;
+              case 'government':
+                  governmentBuildings.push(marker);
+                  break;
+          }
+      }
+
+      // Hospitals
+      createMarker([33.93430833664866, 35.12478307031032], "Nis Tıp Merkezi Mağusa", "100 İsmet İnönü Blv No:41, Gazimağusa 99450", "hospital");
+      createMarker([33.90942365995841, 35.14672365787735], "EMU Health Center", "4WW5+HPQ, Gazimağusa 99450", "hospital");
+      createMarker([33.9253845106468, 35.127695491607774], "Famagusta Medical Hospital", "Eşref Bitlis Caddesi Gazimağusa, KKTC, Gazimağusa 0392", "hospital");
+      createMarker([33.90377832016487, 35.15536983195996], "Gazimağusa Devlet Hastanesi Cerrahi Servisi", "İsmet İnönü Blv, Gazimağusa 99450", "hospital");
+      createMarker([33.935641686688605,35.11760657895154,], "Kunti's Trust Hospital", "Kocatepe Sk, Gazimağusa 99450", "hospital");
+      // Pharmacies
+      createMarker([33.92162449542863, 35.133146074332544], "Veli Nurluöz Eczanesi", "Arena Yanı, Hasan Barboçolli sk. Döveç 48 apt. Lemar Arkası, Gazimağusa", "pharmacy");
+      createMarker([33.92284863522927, 35.135045514009114], "Nasim Eczanesi", "Salamis yolu, Ozkoç Plaza, Colins yanında, Gazimağusa 5000", "pharmacy");
+      createMarker([33.926203652863194, 35.13127960041216], "Ertuğ Emin Eczanesi", "Reflex Apt, İsmet İnönü Blv, Gazimağusa 99450", "pharmacy");
+      createMarker([33.92699805741653, 35.130654973769275], "Bahar Eczanesi", "4WJG+5QC, İsmet İnönü Blv, Gazimağusa 99450", "pharmacy");
+
+      // Government Buildings
+      createMarker([33.94498015155976, 35.117251499005874], "Famagusta District Office", "4W8W+R2J, İlker Karter Cd, Gazimağusa 99450", "government");
+      createMarker([33.928687238652316, 35.128967944227135], "Gazimağusa Polis Müdürlüğü", "Famagusta 99450, Gazimağusa Polis Müdürlüğü", "government");
+      createMarker([33.94507920871039, 35.11634064766305], "Famagusta Turkish Municipality", "4W8W+857, İlker Karter Cd, Gazimağusa 99450", "government");
+
+      // Function to show or hide markers based on type
+      function toggleMarkers(type) {
+          // Hide all markers
+          hospitals.forEach(function(hospital) {
+              hospital.remove();
+          });
+          pharmacies.forEach(function(pharmacy) {
+              pharmacy.remove();
+          });
+          governmentBuildings.forEach(function(building) {
+              building.remove();
+          });
+
+          // Show markers of the selected type
+          switch (type) {
+              case 'hospitals':
+                  hospitals.forEach(function(hospital) {
+                      hospital.addTo(map);
+                  });
+                  break;
+              case 'pharmacies':
+                  pharmacies.forEach(function(pharmacy) {
+                      pharmacy.addTo(map);
+                  });
+                  break;
+              case 'government':
+                  governmentBuildings.forEach(function(building) {
+                      building.addTo(map);
+                  });
+                  break;
+          }
+      }
+
+      // Event listeners for the buttons
+      document.getElementById('showHospitals').addEventListener('click', function() {
+          toggleMarkers('hospitals');
+      });
+
+      document.getElementById('showPharmacies').addEventListener('click', function() {
+          toggleMarkers('pharmacies');
+      });
+
+      document.getElementById('showGovernment').addEventListener('click', function() {
+          toggleMarkers('government');
+      });
+
+      // //hospitals
+      // var NisTıpMerkeziMağusa = [33.93430833664866,35.12478307031032];
+      // var EMUhealthCenter = [ 33.90942365995841,35.14672365787735];
+      // var FamagustaMedicalHospital =[33.9253845106468,35.127695491607774]
+      // var GazimağusaDevletHastanesi =[ 33.90377832016487,35.15536983195996]
+
+      // var marker = new tt.Marker().setLngLat(NisTıpMerkeziMağusa).addTo(map);
+      // var popup = new tt.Popup({offset: popupOffsets}).setHTML("<b>Nis Tıp Merkezi Mağusa</b><br/>100 İsmet İnönü Blv No:41, Gazimağusa 99450");
+      // marker.setPopup(popup).togglePopup();
+
+      // var marker2 = new tt.Marker().setLngLat(EMUhealthCenter).addTo(map);
+      // var popup = new tt.Popup({offset: popupOffsets}).setHTML("<b>EMU health Center</b><br/>4WW5+HPQ, Gazimağusa 99450");
+      // marker2.setPopup(popup).togglePopup();
+
+      // var marker3 = new tt.Marker().setLngLat(FamagustaMedicalHospital).addTo(map);
+      // var popup = new tt.Popup({offset: popupOffsets}).setHTML("<b>Famagusta Medical Hospital</b><br/>Eşref Bitlis Caddesi Gazimağusa, KKTC, Gazimağusa 0392");
+      // marker3.setPopup(popup).togglePopup();
+      
+      // var marker4 = new tt.Marker().setLngLat(GazimağusaDevletHastanesi).addTo(map);
+      // var popup = new tt.Popup({offset: popupOffsets}).setHTML("<b>Gazimağusa Devlet Hastanesi Cerrahi Servisi</b><br/>İsmet İnönü Blv, Gazimağusa 99450");
+      // marker4.setPopup(popup).togglePopup();
+
+      // //pharmacies
+      // var VeliNurluözEczanesi = [33.92162449542863, 35.133146074332544];
+      // var NasimEczanesi = [33.92284863522927, 35.135045514009114];
+      // var ErtuğEminEczanesi = [33.926203652863194, 35.13127960041216];
+      // var BaharEczanesi = [33.92699805741653, 35.130654973769275];
+
+      // var marker5 = new tt.Marker().setLngLat(VeliNurluözEczanesi).addTo(map);
+      // var popup5 = new tt.Popup({ offset: popupOffsets }).setHTML("<b>Veli Nurluöz Eczanesi</b><br/>Arena Yanı, Hasan Barboçolli sk. Döveç 48 apt. Lemar Arkası, Gazimağusa");
+      // marker5.setPopup(popup5).togglePopup();
+
+      // var marker6 = new tt.Marker().setLngLat(NasimEczanesi).addTo(map);
+      // var popup6 = new tt.Popup({ offset: popupOffsets }).setHTML("<b>Nasim Eczanesi</b><br/>Salamis yolu, Ozkoç Plaza, Colins yanında, Gazimağusa 5000");
+      // marker6.setPopup(popup6).togglePopup();
+
+      // var marker7 = new tt.Marker().setLngLat(ErtuğEminEczanesi).addTo(map);
+      // var popup7 = new tt.Popup({ offset: popupOffsets }).setHTML("<b>Ertuğ Emin Eczanesi</b><br/>Reflex Apt, İsmet İnönü Blv, Gazimağusa 99450");
+      // marker7.setPopup(popup7).togglePopup();
+
+      // var marker8 = new tt.Marker().setLngLat(BaharEczanesi).addTo(map);
+      // var popup8 = new tt.Popup({ offset: popupOffsets }).setHTML("<b>Bahar Eczanesi</b><br/>4WJG+5QC, İsmet İnönü Blv, Gazimağusa 99450");
+      // marker8.setPopup(popup8).togglePopup();
+
+      // //goverment buildings
+      // var FamagustaDistrictOffice = [33.94498015155976, 35.117251499005874];
+      // var GazimağusaPolisMüdürlüğü = [33.928687238652316, 35.128967944227135];
+      // var FamagustaTurkishMunicipality = [33.94507920871039, 35.11634064766305];
+
+      // var marker9 = new tt.Marker().setLngLat(FamagustaDistrictOffice).addTo(map);
+      // var popup9 = new tt.Popup({ offset: popupOffsets }).setHTML("<b>Famagusta District Office</b><br/>4W8W+R2J, İlker Karter Cd, Gazimağusa 99450");
+      // marker9.setPopup(popup9).togglePopup();
+      
+      // var marker10 = new tt.Marker().setLngLat(GazimağusaPolisMüdürlüğü).addTo(map);
+      // var popup10 = new tt.Popup({ offset: popupOffsets }).setHTML("<b>Gazimağusa Polis Müdürlüğü</b><br/>Famagusta 99450, Gazimağusa Polis Müdürlüğü");
+      // marker10.setPopup(popup10).togglePopup();
+      
+      // var marker11 = new tt.Marker().setLngLat(FamagustaTurkishMunicipality).addTo(map);
+      // var popup11 = new tt.Popup({ offset: popupOffsets }).setHTML("<b>Famagusta Turkish Municipality</b><br/>4W8W+857, İlker Karter Cd, Gazimağusa 99450");
+      // marker11.setPopup(popup11).togglePopup();
+      // //ignore bellow
+      map.addControl(new tt.FullscreenControl());
+
+      // Create plugin instance
+      var geolocateControl = new tt.GeolocateControl({
+          positionOptions: {
+              enableHighAccuracy: false
+          }
+      });
+
+      bindEvents();
+
+      // Handle case when domain permissions are already blocked
+      handlePermissionDenied();
+
+      map.addControl(geolocateControl);
+
+      function handlePermissionDenied() {
+          if ('permissions' in navigator) {
+              navigator.permissions.query({name: 'geolocation'})
+                  .then(function(result) {
+                      if (result.state === 'denied') {
+                          displayErrorMessage(messages.permissionDenied);
+                      }
+                  });
+          }
+      }
+
+      function bindEvents() {
+          geolocateControl.on('error', handleError);
+          messageBoxClose.addEventListener('click', handleMessageBoxClose);
+      }
+
+      function handleMessageBoxClose() {
+          messageBox.setAttribute('hidden', true);
+      }
+
+      function displayErrorMessage(message) {
+          messageBoxContent.textContent = message;
+          messageBox.removeAttribute('hidden');
+      }
+
+      function handleError(error) {
+          switch (error.code) {
+          case error.PERMISSION_DENIED:
+              displayErrorMessage(messages.permissionDenied);
+              break;
+          case error.POSITION_UNAVAILABLE:
+          case error.TIMEOUT:
+              displayErrorMessage(messages.notAvailable);
+          }
+      }
+
+     
+
+
+    </script>
+
+
 
     <script src="app.js"></script>
 </body>
