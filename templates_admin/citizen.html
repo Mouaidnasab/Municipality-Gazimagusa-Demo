@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+Add New Citizen
+{% endblock %}
+{% block content %}
+<form action="{{ url_for('addrec') }}" method="POST">
+    <h3>Please Add the New Citizen Information:</h3>
+    Citizen ID<br>
+    <input type="text" name="citizen_id" required/><br>
+    Name<br>
+    <input type="text" name="name" required/><br>
+    Email<br>
+    <input type="email" name="email" required/><br>
+    Address<br>
+    <input type="text" name="address" required/><br>
+    <input type="submit" value="Submit" /><br>
+</form>
+{% endblock %}

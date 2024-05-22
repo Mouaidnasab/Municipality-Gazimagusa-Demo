@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles_admin.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+      <a href="{{ url_for('enternew') }}" class="navbar-item"
+        >Add New Citizen</a
+      >
+      <a href="{{ url_for('list') }}" class="navbar-item"
+        >Review and Edit Citizens</a
+      >
+      <a href="{{ url_for('list_votes') }}" class="navbar-item">Review and Edit Votes</a> <!-- Add this line -->
+    </div>
+    <div class="body-content">
+      {% block content %} {% endblock %}
+      <hr />
+      <footer>
+        <p>Gazimagusa Beledeyesi Admin</p>
+      </footer>
+    </div>
+  </body>
+</html>

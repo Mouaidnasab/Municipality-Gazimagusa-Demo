@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}
+Edit Citizen
+{% endblock %}
+{% block content %}
+<h1>Edit Citizen Record</h1>
+{% for row in rows %}
+<form action="{{ url_for('editrec') }}" method="POST">
+    <h3 style="color:blue">Citizen ID: {{ row['citizen_id']}}</h3>
+    <input type="hidden" name="citizen_id" value="{{ row['citizen_id'] }}">
+    Name<br>
+    <input type="text" name="name" value="{{ row['name'] }}"/><br>
+    Email<br>
+    <input type="email" name="email" value="{{ row['email'] }}"/><br>
+    Address<br>
+    <input type="text" name="address" value="{{ row['address'] }}"/><br>
+    <input type="submit" value="Submit" /><br>
+</form>
+{% endfor %}
+{% endblock %}

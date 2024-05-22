@@ -44,7 +44,7 @@
 
     <h class="Tabs__title">Skill Sharing</h>
     <div class="skill__body">
-      <a href="add_skill_sharing.html" style="text-decoration: none">
+      <a href="{{ url_for('add_skill_sharing') }}" style="text-decoration: none">
         <div class="button-container">
             <button class="new-post-button">+</button>
         </div></a>
@@ -60,7 +60,7 @@
                       </div>
                     </div>
                 </div>
-                <img src="/staticimages/breaker_broken.jpg" alt="Burned breaker" class="post-image">
+                <img src="/static/images/breaker_broken.jpg" alt="Burned breaker" class="post-image">
                 <p class="description">Burned breaker help please</p>
                 <button class="help-button" onclick="showDetails('details1')">HELP</button>
                 <div class="details" id="details1">
@@ -75,11 +75,11 @@
                     <div class="type__continer">
                         <span class="type">Plumbing</span>
                         <div class="type__image__container">
-                            <img src="/staticimages/plumbing.png" id="type__image__id">
+                            <img src="/static/images/plumbing.png" id="type__image__id">
                         </div>
                     </div>
                 </div>
-                <img src="/staticimages/sink.jpg" class="post-image">
+                <img src="/static/images/sink.jpg" class="post-image">
                 <p class="description">Sink broken help please</p>
                 <button class="help-button" onclick="showDetails('details2')">HELP</button>
                 <div class="details" id="details2">

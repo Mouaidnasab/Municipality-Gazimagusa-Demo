@@ -47,6 +47,10 @@ def transportation():
 def skill__sharing():
     return render_template("skill__sharing.html")
 
+@app.route('/add_skill_sharing')
+def add_skill_sharing():
+    return render_template("add_skill_sharing.html")
+
 @app.route('/digital__voting')
 def digital__voting():
     return render_template("digital__voting.html")
@@ -86,4 +90,4 @@ def tree_pruning():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)

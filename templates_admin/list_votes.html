@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}
+List All Votes
+{% endblock %}
+{% block content %}
+<table border="1px">
+    <thead>
+        <td><strong>Vote ID</strong></td>
+        <td><strong>Citizen ID</strong></td>
+        <td><strong>Date</strong></td>
+        <td><strong>Description</strong></td>
+        <td></td>
+    </thead>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row["vote_id"] }}</td>
+        <td>{{ row["citizen_id"] }}</td>
+        <td>{{ row["date"] }}</td>
+        <td>{{ row["vote_description"] }}</td>
+        <td>
+            <form action="{{ url_for('delete_vote') }}" method="POST">
+                <input type="hidden" name="vote_id" value="{{ row['vote_id'] }}">
+                <input type="submit" value="Delete">
+            </form>
+            
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

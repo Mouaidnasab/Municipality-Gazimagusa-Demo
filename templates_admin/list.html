@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+List All Citizens
+{% endblock %}
+{% block content %}
+<table border="1px">
+    <thead>
+        <td><strong>Citizen ID</strong></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Email</strong></td>
+        <td><strong>Address</strong></td>
+        <td></td>
+        <td></td>
+    </thead>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row["citizen_id"] }}</td>
+        <td>{{ row["name"] }}</td>
+        <td>{{ row["email"] }}</td>
+        <td>{{ row["address"] }}</td>
+        <td>
+            <form action="{{url_for('edit')}}" method="POST">
+                <input type="hidden" name="id" value="{{ row['citizen_id'] }}">
+                <input type="submit" value="Edit">
+            </form>
+        </td>
+        <td>
+            <form action="{{url_for('delete')}}" method="POST">
+                <input type="hidden" name="id" value="{{ row['citizen_id'] }}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
