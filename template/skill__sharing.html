@@ -50,43 +50,26 @@
         </div></a>
 
         <section class="skill-sharing">
-            <div class="post" id="post1">
+            {% for post in posts %}
+            <div class="post" id="post{{ loop.index }}">
                 <div class="post-info">
-                    <span class="distance">approx. 200 m</span>
+                    <span class="distance">{{ post["date_added"] }}</span>
                     <div class="type__continer">
-                      <span class="type">Electrical</span>
+                      <span class="type">{{ post["type"] }}</span>
                       <div class="type__image__container">
-                        <img src="/static/images/electrical.png" id="type__image__id">
+                        <img src="/static/images/{{ post['type_image'] }}" id="type__image__id">
                       </div>
                     </div>
                 </div>
-                <img src="/static/images/breaker_broken.jpg" alt="Burned breaker" class="post-image">
-                <p class="description">Burned breaker help please</p>
-                <button class="help-button" onclick="showDetails('details1')">HELP</button>
-                <div class="details" id="details1">
-                    <p> Contact: 123-456-7890</p>
-                    <p>Email: name@example.com</p>
+                <img src="/static/ss_images/{{ post['img_name'] }}" alt="{{ post['img_name'] }}" class="post-image">
+                <p class="description">{{ post["description"] }}</p>
+                <button class="help-button" onclick="showDetails('details{{ loop.index }}')">HELP</button>
+                <div class="details" id="details{{ loop.index }}">
+                    <p> Contact: {{ post["phone"] }}</p>
+                    <p>Email: {{ post["email"] }}</p>
                 </div>
             </div>
-
-            <div class="post" id="post2" >
-                <div class="post-info">
-                    <span class="distance">approx. 1.2 km</span>
-                    <div class="type__continer">
-                        <span class="type">Plumbing</span>
-                        <div class="type__image__container">
-                            <img src="/static/images/plumbing.png" id="type__image__id">
-                        </div>
-                    </div>
-                </div>
-                <img src="/static/images/sink.jpg" class="post-image">
-                <p class="description">Sink broken help please</p>
-                <button class="help-button" onclick="showDetails('details2')">HELP</button>
-                <div class="details" id="details2">
-                    <p>Contact: 123-456-7890</p>
-                    <p>Email: name@example.com</p>
-                </div>
-            </div>
+            {% endfor %}
         </section>
 
         <script>

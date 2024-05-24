@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}
+List All Citizens
+{% endblock %}
+{% block content %}
+<table border="1px">
+    <thead>
+        <td><strong>News_id</strong></td>
+        <td><strong>Title</strong></td>
+        <td><strong>Body</strong></td>
+        <td><strong>Date Added</strong></td>
+        <td></td>
+        <td></td>
+    </thead>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row["news_id"] }}</td>
+        <td>{{ row["title"] }}</td>
+        <td>{{ row["body"] }}</td>
+        <td>{{ row["date_added"] }}</td>
+        <td>
+            <form action="{{url_for('delete_news')}}" method="POST">
+                <input type="hidden" name="id" value="{{ row['news_id'] }}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

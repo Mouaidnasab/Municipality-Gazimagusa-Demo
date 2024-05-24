@@ -41,27 +41,79 @@
   </nav>
 
 
-  <!-- Add Post Button -->
-  <button id="addPostButton" class="add-post-button">Add Post</button>
+  <h class="Tabs__title">Blog</h>
+  <div class="skill__body">
+    <a href="{{ url_for('add_blog') }}" style="text-decoration: none">
+      <div class="button-container">
+          <button class="new-post-button">+</button>
+      </div></a>
 
-  <!-- Post Form -->
-  <main id="postForm" class="main__post hidden">
-      <div class="post__container">
-          <label for="C_ID" class="post__label">Citizen ID:</label>
-          <input type="text" id="C_ID" class="post__input">
-      </div>
-      <div class="post__container">
-          <label for="B_title" class="post__label">Title:</label>
-          <input type="text" id="B_title" class="post__input">
-      </div>
-      <div class="post__container">
-          <label for="B_body" class="post__label">Body:</label>
-          <textarea id="B_body" class="post__textarea"></textarea>
-      </div>
-      <button id="post" class="post__button">Post</button>
-  </main>
+      {% for post in posts %}
+      <section class="skill-sharing">
+          <!--{% for post in posts %}
+          <div class="post" id="post{{ loop.index }}">
+              <div class="post-info">
+                  <span class="distance">{{ post["date_added"] }}</span>
+              </div>
+              <p class="description">{{ post["description"] }}</p>
+              <button class="help-button" onclick="showDetails('details{{ loop.index }}')">HELP</button>
+              <div class="details" id="details{{ loop.index }}">
+                  <p> Contact: {{ post["phone"] }}</p>
+                  <p>Email: {{ post["email"] }}</p>
+              </div>
+          </div>
+          {% endfor %}-->
 
-<script src="/static/js/post.js"></script>
+        
+          <div class="post" id="post">
+            <div class="post-info">
+                <span class="distance">{{ post["name_blog"] }}</span>
+                <span class="distance">{{ post["date_added"] }}</span>
+            </div>
+            <p class="description">{{ post["description"] }}</p>
+            <div style="margin: 20px;">
+              {% for replypost in replyposts %}
+              {% if replypost["blog_id"] == post["blog_id"]%}
+              <div class="post-info"> <!-- Navbar Srction -->
+                <span class="distance">{{ replypost["name_reply"] }}</span>
+              </div>
+              <p class="description" style="margin: 10px;">{{ replypost["description"] }}</p>
+              {% endif %}
+              {% endfor %}
+            </div>
+
+            <button class="help-button" onclick="showDetails('details{{ loop.index }}')">HELP</button>
+            <div class="details" id="details{{ loop.index }}">
+              <section class="add-post">
+              <form action="{{ url_for('blog') }}" method="POST" enctype="multipart/form-data">
+                <label for="user_id">Citizen Number:</label>
+                <input type="number" id="user_id" name="citizen_id" required>
+                
+                <label for="reply">Reply:</label>
+                <textarea id="reply" name="reply" required></textarea>
+                <input type="hidden" name="id" value="{{ post['blog_id'] }}">
+                <button type="submit" value="Submit">Add Reply</button>
+            </form>
+            </section>
+            </div>
+        </div>
+        
+      </section>
+      {% endfor %}
+
+      <script>
+        function showDetails(id) {
+            var details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+
+
+    </script>
+
 
  <!-- footer Section -->
  <div class="footer__container">

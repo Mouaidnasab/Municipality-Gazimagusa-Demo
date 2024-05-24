@@ -138,59 +138,14 @@
         <h5 class="News__warning">*swipe right for older news</h5>
         <div class="swiper">
           <div class="swiper-wrapper">
+            {% for news in newss %}
             <div class="swiper-slide">
-              <span>19/3/2024</span>
-              <h4>body</h4>
-              <h2>Title</h2>
+              <span>{{ news["date_added"] }}</span>
+              <h4>{{ news["body"] }}</h4>
+              <h2>{{ news["title"] }}</h2>
             </div>
+            {% endfor %}
 
-            <div class="swiper-slide">
-              <span>26/3/2024</span>
-              <h4>body</h4>
-              <h2>Title</h2>
-            </div>
-
-            <div class="swiper-slide">
-              <span>1/4/2024</span>
-              <h4>body</h4>
-              <h2>Title</h2>
-            </div>
-
-            <div class="swiper-slide">
-              <span>5/4/2024</span>
-              <h4>body</h4>
-              <h2>Title</h2>
-            </div>
-
-            <div class="swiper-slide">
-              <span>12/4/2024</span>
-              <h4>body</h4>
-              <h2>Title</h2>
-            </div>
-
-            <div class="swiper-slide">
-              <span>23/4/2024</span>
-              <h4>National Sovereignty & Children’s Day</h4>
-              <h2>Public Holday</h2>
-            </div>
-
-            <div class="swiper-slide">
-              <span>29/4/2024</span>
-              <h4>body</h4>
-              <h2>Title</h2>
-            </div>
-
-            <div class="swiper-slide">
-              <span>1/5/2024</span>
-              <h4>Workers and Spring Day</h4>
-              <h2>Public Holday</h2>
-            </div>
-
-            <div class="swiper-slide">
-              <span>8/5/2024</span>
-              <h4>body</h4>
-              <h2>Title</h2>
-            </div>
           </div>
         </div>
       </div>

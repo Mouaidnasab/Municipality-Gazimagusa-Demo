@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__, template_folder='templates_admin')
 app.secret_key = 'supersecretkey'
-port = 3000
+
 
 # Database setup
 def get_db_connection():

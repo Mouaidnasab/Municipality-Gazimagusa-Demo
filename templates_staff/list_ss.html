@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}
+List All Citizens
+{% endblock %}
+{% block content %}
+<table border="1px">
+    <thead>
+        <td><strong>Skill Sharing ID</strong></td>
+        <td><strong>Citizen ID</strong></td>
+        <td><strong>Description</strong></td>
+        <td><strong>Email</strong></td>
+        <td><strong>Phone</strong></td>
+        <td><strong>Type</strong></td>
+        <td><strong>Image Name</strong></td>
+        <td><strong>Date Added</strong></td>
+        <td></td>
+        <td></td>
+    </thead>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row["ss_id"] }}</td>
+        <td>{{ row["citizen_id"] }}</td>
+        <td>{{ row["description"] }}</td>
+        <td>{{ row["email"] }}</td>
+        <td>{{ row["phone"] }}</td>
+        <td>{{ row["type"] }}</td>
+        <td>{{ row["img_name"] }}</td>
+        <td>{{ row["date_added"] }}</td>
+        <td>
+            <form action="{{url_for('delete_ss')}}" method="POST">
+                <input type="hidden" name="id" value="{{ row['ss_id'] }}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

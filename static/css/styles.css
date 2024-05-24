@@ -831,6 +831,20 @@ label span {
     margin-top: 20px;
 }
 
+.add-post input[type="file"]{     
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.alert {
+    padding: 15px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+
 
 
 
@@ -1294,17 +1308,7 @@ label {
 }
 
 
-input[type="file"]{     /*here*/
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-}
 
-input[type="file"] {     /*here*/
-    display: none;
-}
 
 .custom-file-upload {
     display: flex;

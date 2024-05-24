@@ -8,13 +8,16 @@
   <body>
     <div class="navbar">
       <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-      <a href="{{ url_for('enternew') }}" class="navbar-item"
-        >Add New Citizen</a
+      <a href="{{ url_for('blog') }}" class="navbar-item"
+        >Blog</a
       >
-      <a href="{{ url_for('list') }}" class="navbar-item"
-        >Review and Edit Citizens</a
+      <a href="{{ url_for('news') }}" class="navbar-item"
+        >News</a
       >
-      <a href="{{ url_for('list_votes') }}" class="navbar-item">Review and Edit Votes</a> <!-- Add this line -->
+      <a href="{{ url_for('add_news') }}" class="navbar-item"
+        >Add News</a
+      >
+      <a href="{{ url_for('skill_sharing') }}" class="navbar-item">Skill Sharing</a> <!-- Add this line -->
       <a href="http://127.0.0.1:4500" class="navbar-item">Return to main page</a> <!-- Add this line -->
 
     </div>
