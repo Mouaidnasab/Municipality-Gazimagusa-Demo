@@ -73,7 +73,6 @@ def blog():
             citizen_id = request.form['citizen_id']
             description = request.form['reply']
             blog_id = request.form['id']
-
             with get_db_connection() as con:
                 cur = con.cursor()
 
@@ -91,7 +90,7 @@ def blog():
                     con.commit()
                     msg = "Record successfully added"
                     print(f"DEBUG: Inserted {blog_id}, {name_reply}, {description} into reply_blog table")
-                    return render_template("blog.html", posts=posts ,replyposts=replyposts, msg=msg)
+                    return render_template(url_for('blog'))
                 else:
                     msg = "Citizen ID not found, please try again."
                     flash('Citizen ID not found, please try again.', 'error')
