@@ -70,7 +70,6 @@ def blog():
 
     if request.method == 'POST':
         try:
-            print('hi')
             citizen_id = request.form['citizen_id']
             description = request.form['reply']
             blog_id = request.form['id']
@@ -92,6 +91,7 @@ def blog():
                     con.commit()
                     msg = "Record successfully added"
                     print(f"DEBUG: Inserted {blog_id}, {name_reply}, {description} into reply_blog table")
+                    return render_template("blog.html", posts=posts ,replyposts=replyposts, msg=msg)
                 else:
                     msg = "Citizen ID not found, please try again."
                     flash('Citizen ID not found, please try again.', 'error')

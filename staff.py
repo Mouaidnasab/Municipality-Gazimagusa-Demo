@@ -17,9 +17,69 @@ def get_db_connection():
 def home():
     return render_template("home.html")
 
+# Home Page route
+@app.route("/complaint")
+def complaint():
+    return render_template("home.html")
+
 @app.route("/blog")
 def blog():
-    return render_template("home.html")
+    con = get_db_connection()
+    cur = con.cursor()
+    cur.execute("SELECT * FROM blog")
+    rows = cur.fetchall()
+    cur.execute("SELECT * FROM reply_blog")
+    reply_rows = cur.fetchall()
+    con.close()
+    print(f"DEBUG: Retrieved rows: {rows}")
+    return render_template("list_blog.html", rows=rows, reply_rows=reply_rows)
+
+
+# Route to delete a blog
+@app.route("/delete_blog", methods=['POST'])
+def delete_blog():
+    if request.method == 'POST':
+        try:
+            blog_id = request.form['id']
+            with get_db_connection() as con:
+                cur = con.cursor()
+                cur.execute("DELETE FROM blog WHERE blog_id = ?", (blog_id,))
+                cur.execute("DELETE FROM reply_blog WHERE blog_id = ?", (blog_id,))
+                con.commit()
+                msg = "Record successfully deleted"
+        except Exception as e:
+            con.rollback()
+            msg = f"Error in delete operation: {e}"
+
+        finally:
+            con.close()
+            flash(msg)
+            return redirect(url_for('blog'))
+
+
+# Route to delete a blog reply
+@app.route("/delete_blog_reply", methods=['POST'])
+def delete_blog_reply():
+    if request.method == 'POST':
+        try:
+            reply_id = request.form['id']
+            print(reply_id)
+            with get_db_connection() as con:
+                cur = con.cursor()
+                cur.execute("DELETE FROM reply_blog WHERE reply_id = ?", (reply_id))
+                con.commit()
+                msg = "Record successfully deleted"
+        except Exception as e:
+            con.rollback()
+            msg = f"Error in delete operation: {e}"
+
+        finally:
+            con.close()
+            flash(msg)
+            return redirect(url_for('blog'))
+
+
+
     
 
 @app.route("/add_news", methods=['POST', 'GET'])

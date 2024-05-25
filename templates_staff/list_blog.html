@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}
+List All Citizens
+{% endblock %}
+{% block content %}
+<table border="1px">
+    <thead>
+        <td><strong>Blog ID<strong></td>
+        <td><strong>Reply ID<strong></td>
+        <td><strong>Citizen Name</strong></td>
+        <td><strong>Body</strong></td>
+        <td><strong>Date Added</strong></td>
+        <td></td>
+        <td></td>
+    </thead>
+    {% for row in rows %}
+    
+
+    <tr>
+        <td>{{ row["blog_id"] }}</td>
+        <td></td>
+        <td>{{ row["name_blog"] }}</td>
+        <td>{{ row["description"] }}</td>
+        <td>{{ row["date_added"] }}</td>
+        
+        <td>
+            <form action="{{url_for('delete_blog')}}" method="POST">
+                <input type="hidden" name="id" value="{{ row['blog_id'] }}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+    {% for reply_row in reply_rows %}
+    {% if row["blog_id"] == reply_row["blog_id"]%}
+    <tr>
+        <td>{{ reply_row["blog_id"] }}</td>
+        <td>{{ reply_row["reply_id"] }}</td>
+        <td>{{ reply_row["name_blog"] }}</td>
+        <td>{{ reply_row["description"] }}</td>
+        <td></td>
+        
+        <td>
+            <form action="{{url_for('delete_blog_reply')}}" method="POST">
+                <input type="hidden" name="id" value="{{ reply_row['reply_id'] }}">
+                <input type="submit" value="Delete Reply">
+            </form>
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+</table>
+{% endblock %}

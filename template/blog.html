@@ -50,19 +50,7 @@
 
       {% for post in posts %}
       <section class="skill-sharing">
-          <!--{% for post in posts %}
-          <div class="post" id="post{{ loop.index }}">
-              <div class="post-info">
-                  <span class="distance">{{ post["date_added"] }}</span>
-              </div>
-              <p class="description">{{ post["description"] }}</p>
-              <button class="help-button" onclick="showDetails('details{{ loop.index }}')">HELP</button>
-              <div class="details" id="details{{ loop.index }}">
-                  <p> Contact: {{ post["phone"] }}</p>
-                  <p>Email: {{ post["email"] }}</p>
-              </div>
-          </div>
-          {% endfor %}-->
+
 
         
           <div class="post" id="post">
@@ -70,19 +58,19 @@
                 <span class="distance">{{ post["name_blog"] }}</span>
                 <span class="distance">{{ post["date_added"] }}</span>
             </div>
-            <p class="description">{{ post["description"] }}</p>
+            <p class="description" style="margin: 5px;">{{ post["description"] }}</p>
             <div style="margin: 20px;">
               {% for replypost in replyposts %}
               {% if replypost["blog_id"] == post["blog_id"]%}
               <div class="post-info"> <!-- Navbar Srction -->
                 <span class="distance">{{ replypost["name_reply"] }}</span>
               </div>
-              <p class="description" style="margin: 10px;">{{ replypost["description"] }}</p>
+              <p class="description" style="margin: 5px;">{{ replypost["description"] }}</p>
               {% endif %}
               {% endfor %}
             </div>
 
-            <button class="help-button" onclick="showDetails('details{{ loop.index }}')">HELP</button>
+            <button class="help-button" onclick="showDetails('details{{ loop.index }}')">Reply</button>
             <div class="details" id="details{{ loop.index }}">
               <section class="add-post">
               <form action="{{ url_for('blog') }}" method="POST" enctype="multipart/form-data">
@@ -113,6 +101,7 @@
 
 
     </script>
+    </div>
 
 
  <!-- footer Section -->
