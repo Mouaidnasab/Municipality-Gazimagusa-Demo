@@ -1310,6 +1310,100 @@ input[type="file"].choose_file_a{
     }
 }
 
+/*transportation css*/
+
+.routes{
+    justify-content: center;
+    padding-top: 50px;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin-right: 10px;
+    /*align-items: center;*/
+    width: 100%;
+    max-width: 500px;
+    padding: 50px 30px 50px 20px;
+    gap: 40px;
+    border-radius: 20px;
+
+}
+
+.route_img{
+    max-width: 280px;
+    width: 25vm;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 30px;
+    margin-left: -60px;
+    border-radius: inherit;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+}
+
+.route_h2{
+    font-size: 24px;
+    font-weight: 400px;
+    margin-top: 30px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+    place-content: center;
+}
+
+.departure_times{
+    border-collapse: separate;
+    border-spacing: 20px;
+
+}
+
+.departure_times td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.return_head{
+    padding: 15px;
+}
+
+.route{
+    width: 100%;
+}
+
+@media screen and (max-width:900px) {
+    .routes{
+        flex-direction: column;
+        place-items: center;
+        margin: 100px 0px;
+        padding: 0px 50px 60px 50px;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .departure_times {
+        width: 100%;
+        max-width: 500px; /* Adjust as needed */
+        margin-top: 20px; /* Add spacing between image and table */
+      }
+
+      .departure_times table {
+        margin: 0 auto; /* Center the table horizontally */
+      }
+
+    .route_img{
+        position: static;
+        max-width: 100%;
+        margin: 20px auto;
+        display: block;
+        text-align: center;
+    }
+    
+}
+.main_a{
+    display: grid;
+    place-items: center;
+    margin: 0;
+}
+
 
 /*end of ali css*/
 
