@@ -855,114 +855,6 @@ label span {
     margin: 0;
 }
 
-.routes{
-    justify-content: center;
-    padding-top: 50px;
-    display: flex;
-    flex: 1;
-    height: 100%;
-    margin-right: 10px;
-    /*align-items: center;*/
-    width: 100%;
-    max-width: 500px;
-    padding: 50px 30px 50px 20px;
-    gap: 40px;
-    border-radius: 20px;
-}
-
-.route_img{
-    max-width: 280px;
-    width: 25vm;
-    height: 300px;
-    object-fit: cover;
-    margin-right: 30px;
-    margin-left: -60px;
-    border-radius: inherit;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-
-.route_h2{
-    font-size: 24px;
-    font-weight: 400px;
-    margin-top: 30px;
-    margin-right: 25px;
-    margin-bottom: 10px;
-    place-content: center;
-}
-
-.departure_times{
-    border-collapse: separate;
-    border-spacing: 20px;
-}
-
-.departure_times td {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.return_head{
-    padding: 15px;
-}
-
-.route1{
-    width: 100%;
-}
-
-.route2{
-    width: 100%;
-}
-
-.route3{
-    width: 100%;
-}
-
-.route4{
-    width: 100%;
-}
-
-@media screen and (max-width:900px) {
-    .routes{
-        flex-direction: column;
-        place-items: center;
-        margin: 100px 0px;
-        padding: 0px 50px 60px 50px;
-        width: 100%;
-        text-align: center;
-        flex-direction: column;
-    }
-    
-    .departure_times {
-        width: 100%;
-        max-width: 500px; /* Adjust as needed */
-        margin-top: 20px; /* Add spacing between image and table */
-      }
-
-      .departure_times table {
-        margin: 0 auto; /* Center the table horizontally */
-      }
-
-    .route_img{
-        position: static;
-        max-width: 100%;
-        margin: 20px auto;
-        display: block;
-        text-align: center;
-    }
-    
-}
-
-
-.container_sewege_a{
-    width: 50%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-}
-
 @media only screen and (max-width: 600px) {
     .container_sewege_a {
       width: 80% !important; 
@@ -972,140 +864,76 @@ label span {
     .form-group_a {
       margin-bottom: 15px; 
     }
-    .form-group_a label {
+    .form-group_a label_a {
       display: block; 
       margin-bottom: 5px; 
     }
-    .form-group_a input[type="text"] {
+    .form-group_a input[type="text"].text_a {
       width: 100%; 
       padding: 10px; 
       box-sizing: border-box; 
     }
+    .form-group_a input[type="number"].number_a {
+        width: 100%; 
+        padding: 10px; 
+        box-sizing: border-box; 
+      }
   }
   
 
-.h2_a{
-    margin-bottom: 15px;
-}
-
-.form_group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin: 10px;
-}
-
-.input[type="submit"]:hover {     /*here*/
-    background-color: #45a049;
-}
-
-.input[type="text"], .input[type="number"], textarea {     /*here*/
+  .form-group_a input[type="number"].number_a {     /*here*/
     width: 100%;
     padding: 8px;
     border-radius: 5px;
+    box-sizing: border-box;
     border: 1px solid #ccc;
 }
-.input[type="submit"] {     /*here*/
-    margin-top: 10px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.main_a{
-    display: grid;
-    place-items: center;
-    margin: 0;
-}
-
-.h1_a {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.routes_a{
-    justify-content: center;
-    padding-top: 50px;
-    display: flex;
-    flex: 1;
+.Tabs__content_a span {
+    align-items: left;
     height: 100%;
-    margin-right: 10px;
     width: 100%;
-    max-width: 500px;
-    padding: 50px 30px 50px 20px;
-    gap: 40px;
-    border-radius: 20px;
-
+    color: #343434;
 }
 
-.route_a{
-    width: 100%;
-}
-
-@media screen and (max-width:900px) {
-    .routes_a{
-        flex-direction: column;
-        place-items: center;
-        margin: 100px 0px;
-        padding: 0px 50px 60px 50px;
-        width: 100%;
-        text-align: center;
-        flex-direction: column;
-    }
-    
-    .departure_times {
-        width: 100%;
-        max-width: 500px; /* Adjust as needed */
-        margin-top: 20px; /* Add spacing between image and table */
-    }
-
-    .departure_times table {
-        margin: 0 auto; /* Center the table horizontally */
-    }
-
-    .route_img {
-        max-width: 100%;
-        max-height: auto; /* Adjust height as needed */
-
-    }
+.Tabs__image__container_a{
+    height: 50px;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
     
 }
 
-.route_img {
-
-    max-width: 280px;
-    top: 10%;
-    left: 10%;
-    border-radius: 3px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+.Tabs__content_a {
+    background: #fff;
+    /*border: 0.01px solid rgba(32, 42, 80, .1);*/
+    border-radius: 21px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .04);
+    cursor: pointer;
+    padding:20px 20px;
+    align-items: center;
 }
 
+.Tabs__content_a:hover {
+    transition: all 0.3s ease;
+    transform:scale(1.05)
+}
 
-.route_h2{
-    font-size: 24px;
-    font-weight: 400px;
+.Main__center_a {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 30px;
-    margin-right: 25px;
-    margin-bottom: 10px;
-    place-content: center;
 }
 
-.departure_times{
-    border-collapse: separate;
-    border-spacing: 20px;
-
-}
-
-.departure_times td {
-    border: 1px solid black;
-    padding: 10px;
+.Tabs__container_a {
+    margin-bottom: 15px;
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 5fr));
+    max-width: 1200px;
+    width:100%
 }
 
 .Tabs__title_a {
@@ -1119,7 +947,7 @@ label {
     font-weight: 1000;
 }
 
-.container_sewege_a{
+.container_sewege_a {
     width: 50%;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -1134,29 +962,30 @@ label {
     margin-bottom: 20px;
 }
 
-.input[type="submit"] {     /*here*/
+input[type="submit"].submit_a {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-} 
-.input[type="submit"]:hover {     /*here*/
+    margin-top: 10px;
+}
+
+.input[type="submit"].submit_a:hover {    
     background-color: #45a049;
 }
 
-label {
+.label_a {
     display: block; 
     margin-bottom: 5px; 
     font-weight: bold;
+    margin-top: 10px;
 }
 
-.h2_a{
-    margin-bottom: 15px;
-}
 
-.input[type="text"], textarea {     /*here*/
+input[type="text"].text_a, textarea.text_a {
+    width: 100%;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -1172,6 +1001,7 @@ label {
 }
 
 .bill-container_a{
+    margin-top: 10px;
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -1198,7 +1028,7 @@ label {
     margin-right: 5px;
     vertical-align: middle;
 }
-.button {  /*here*/
+.button_a {  
     display: block;
     width: 100%;
     padding: 10px;
@@ -1210,7 +1040,7 @@ label {
     cursor: pointer;
 }
 
-.button:hover {   /*here*/
+.button_a:hover {  
     background-color: #c9671c;
 }
 
@@ -1251,15 +1081,6 @@ label {
     background-color: #c9671c;
 }
 
-.container_a{
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .bill-container_a{
     padding: 15px;
     background-color: #f9f9f9;
@@ -1287,7 +1108,7 @@ label {
     margin-right: 5px;
     vertical-align: middle;
 }
-.button {     /*here*/
+.button_a {     
     display: block;
     width: 100%;
     padding: 10px;
@@ -1299,16 +1120,23 @@ label {
     cursor: pointer;
 }
 
-.button:hover {    /*here*/
+.button_a:hover {    
     background-color: #c9671c;
 }
 
 .h2_a2{
     margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 
-
+input[type="file"].choose_file_a{    
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
 
 .custom-file-upload {
     display: flex;
@@ -1336,6 +1164,153 @@ label {
     font-size: 14px;
     color: #555;
 }
+
+.body_a {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container_a_r {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.points-info {
+    margin-bottom: 20px;
+}
+
+.earn-points, .transactions, .redeem-section {
+    margin-bottom: 20px;
+}
+
+.label_r {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.select_a{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+} 
+
+.earn-points ul, .transactions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.earn-points li, .transactions li {
+    margin-bottom: 5px;
+}
+
+.redeem-message{
+    color: green;
+}
+
+/*blocked cars css*/
+
+.main_blocked {
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.blocked-cars-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blocked-cars-section h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #343434;
+}
+
+.cars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.car {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.car img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; 
+}
+
+.car-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.car-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #343434;
+}
+
+.car-details p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .cars-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .car {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blocked-cars-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .car-details h2 {
+        font-size: 1.25rem;
+    }
+
+    .car-details p {
+        font-size: 0.9rem;
+    }
+}
+
+
 /*end of ali css*/
 
 
