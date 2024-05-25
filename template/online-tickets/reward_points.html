@@ -43,82 +43,82 @@
 
 
 
-<body class="body_a">
-    <div class="container_a">
-        <h1 class="h1_a">My Reward Points</h1>
-        <div class="user-info">
-            <p>Citizen ID: <strong>12345</strong></p>
-            <p>Name: <strong>John Doe</strong></p>
+    <body class="body_a">
+        <div class="container_a_r">
+            <h1 class="h1_a">My Reward Points</h1>
+            <div class="user-info">
+                <p>Citizen ID: <strong>12345</strong></p>
+                <p>Name: <strong>John Doe</strong></p>
+            </div>
+            <div class="points-info">
+                <p>Earn more points to unlock rewards!</p>
+            </div>
+            <div class="earn-points">
+                <h2>Earn More Points</h2>
+                <ul>
+                    <li>Submit a Complaint: +50 Points</li>
+                    <li>Participate in Survey: +20 Points</li>
+                    <li>Use Public Transport: +10 Points</li>
+                </ul>
+            </div>
+            <div class="transactions">
+                <h2>Recent Transactions</h2>
+                <ul>
+                    <li>2024-05-01: Submitted Complaint (+50 Points)</li>
+                    <li>2024-04-28: Participated in Survey (+20 Points)</li>
+                    <li>2024-04-25: Used Public Transport (+10 Points)</li>
+                </ul>
+            </div>
+            <div class="redeem-section">
+                <label class="label_r" for="redeemPoints"><strong>Redeem Points:</strong></label>
+                <select class="select_a" id="redeemPoints">
+                    <option value="0">Select Option</option>
+                    <option value="30">Free Bus Ticket (30 points)</option>
+                    <option value="70">Discount on Services/Merchandise (20% discount, 70 points)</option>
+                    <option value="100">Cash ($5 for 100 points)</option>
+                </select>
+                <button class="button_a" onclick="redeemPoints()">Redeem</button>
+                <p id="redeemMessage" class="redeem-message"></p> <!-- Message element -->
+            </div>
+            <p id="pointsBalance">Current Points Balance: <strong>80 Points</strong></p>
         </div>
-        <div class="points-info">
-            <p>Earn more points to unlock rewards!</p>
-        </div>
-        <div class="earn-points">
-            <h2>Earn More Points</h2>
-            <ul>
-                <li>Submit a Complaint: +50 Points</li>
-                <li>Participate in Survey: +20 Points</li>
-                <li>Use Public Transport: +10 Points</li>
-            </ul>
-        </div>
-        <div class="transactions">
-            <h2>Recent Transactions</h2>
-            <ul>
-                <li>2024-05-01: Submitted Complaint (+50 Points)</li>
-                <li>2024-04-28: Participated in Survey (+20 Points)</li>
-                <li>2024-04-25: Used Public Transport (+10 Points)</li>
-            </ul>
-        </div>
-        <div class="redeem-section">
-            <label for="redeemPoints"><strong>Redeem Points:</strong></label>
-            <select class="select_a" id="redeemPoints">
-                <option value="0">Select Option</option>
-                <option value="30">Free Bus Ticket (30 points)</option>
-                <option value="70">Discount on Services/Merchandise (20% discount, 70 points)</option>
-                <option value="100">Cash ($5 for 100 points)</option>
-            </select>
-            <button class="button_a" onclick="redeemPoints()">Redeem</button>
-            <p id="redeemMessage" class="redeem-message"></p> <!-- Message element -->
-        </div>
-        <p id="pointsBalance">Current Points Balance: <strong>80 Points</strong></p>
-    </div>
-    
-    <script>
-        var pointsBalance = 80; // Example current points balance
-    
-        function redeemPoints() {
-            var redeemSelect = document.getElementById("redeemPoints");
-            var redeemOption = redeemSelect.options[redeemSelect.selectedIndex];
-            var redeemMessage = document.getElementById("redeemMessage");
-            var pointsToRedeem = parseInt(redeemOption.value);
-    
-            // Reset message
-            redeemMessage.textContent = "";
-    
-            if (pointsToRedeem === 0) {
-                redeemMessage.textContent = "Please select a redemption option.";
-                return;
+        
+        <script>
+            var pointsBalance = 80; // Example current points balance
+        
+            function redeemPoints() {
+                var redeemSelect = document.getElementById("redeemPoints");
+                var redeemOption = redeemSelect.options[redeemSelect.selectedIndex];
+                var redeemMessage = document.getElementById("redeemMessage");
+                var pointsToRedeem = parseInt(redeemOption.value);
+        
+                // Reset message
+                redeemMessage.textContent = "";
+        
+                if (pointsToRedeem === 0) {
+                    redeemMessage.textContent = "Please select a redemption option.";
+                    return;
+                }
+        
+                if (pointsBalance < pointsToRedeem) {
+                    redeemMessage.textContent = "Error: You cannot redeem more points than you have.";
+                    return;
+                }
+        
+                // Update points balance
+                pointsBalance -= pointsToRedeem;
+                document.getElementById("pointsBalance").innerText = "Current Points Balance: " + pointsBalance + " Points";
+        
+                // Handle redemption options
+                if (pointsToRedeem === 30) {
+                    redeemMessage.textContent = "Successfully redeemed to a free bus ticket!";
+                } else if (pointsToRedeem === 70) {
+                    redeemMessage.textContent = "Successfully redeemed. You get a 20% discount on services/merchandise!";
+                } else if (pointsToRedeem === 100) {
+                    redeemMessage.textContent = "Successfully redeemed. You get $5 for every 100 points!";
+                }
             }
-    
-            if (pointsBalance < pointsToRedeem) {
-                redeemMessage.textContent = "Error: You cannot redeem more points than you have.";
-                return;
-            }
-    
-            // Update points balance
-            pointsBalance -= pointsToRedeem;
-            document.getElementById("pointsBalance").innerText = "Current Points Balance: " + pointsBalance + " Points";
-    
-            // Handle redemption options
-            if (pointsToRedeem === 30) {
-                redeemMessage.textContent = "Successfully redeemed to a free bus ticket!";
-            } else if (pointsToRedeem === 70) {
-                redeemMessage.textContent = "Successfully redeemed. You get a 20% discount on services/merchandise!";
-            } else if (pointsToRedeem === 100) {
-                redeemMessage.textContent = "Successfully redeemed. You get $5 for every 100 points!";
-            }
-        }
-    </script>
+        </script>
     
     <!-- footer Section -->
     <div class="footer__container">

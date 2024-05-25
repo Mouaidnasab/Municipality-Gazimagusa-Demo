@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote Page</title>
+    <title>Vote page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/static/css/voting.css" />
 </head>
 <body>
     <!-- Navbar Section -->
@@ -37,14 +40,30 @@
         </div>
     </nav>
 
-    <h1>Welcome to the Vote Page</h1>
-    <p>Please enter your Citizen ID to vote:</p>
-    <form action="/vote" method="post">
-        <input type="hidden" name="vote_id" value="{{ vote_id }}">
-        <p>Vote ID: {{ vote_id }}</p>
-        <input type="text" name="citizen_id" placeholder="Enter Citizen ID" required>
-        <button type="submit">Vote</button>
-    </form>
+    <!-- Main Content -->
+    <h1 class="Tabs__title">Welcome to the Vote Page</h1>
+    <div class="container_sewege">
+        <p class="p_vote">Please enter your Citizen ID to vote:</p>
+        <form action="/vote" method="post">
+            <input type="hidden" name="vote_id" value="{{ vote_id }}">
+            <p>Vote ID: {{ vote_id }}</p>
+            <input class="citizen_id_input" type="text" name="citizen_id" placeholder="Enter Citizen ID" required>
+            <button type="submit">Vote</button>
+        </form>
+            
+            <!-- Flash messages -->
+            <div class="flash-messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
 
     <!-- Footer Section -->
     <div class="footer__container">
