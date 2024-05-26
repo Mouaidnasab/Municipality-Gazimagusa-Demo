@@ -19,7 +19,7 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: 'Tilt Neon', Courier, monospace;
+        overflow:hidden;
       }
     body {
       width: 100%;
@@ -29,22 +29,20 @@
     }
 
     #map {
-      margin-top: 20px;
+      position: absolute;
       width: 100vw;
       height: 100vh;
     }
 
     .map-controls {
-      display: flex;
       justify-content: center;
-      background-color: rgba(255, 255, 255, 0.9);
       padding: 10px;
       border-radius: 5px;
-      font-family: 'Tilt Neon', Courier, monospace; /* Apply the font-family */
-      box-sizing: border-box; /* Apply the box-sizing */
+      box-sizing: border-box; 
    }
 
     .map-controls button {
+      justify-content: end;
       margin: 5px;
       padding:  10px 15px;
       background-color: #fe7711;
@@ -54,6 +52,7 @@
       cursor: pointer;
       font-size: 16px;
       font-weight: bold;
+      z-index: 999;
     }
 
     .map-controls button:hover {
@@ -61,8 +60,6 @@
     }
     .button-box {
         display: none;
-        background-color: #fff;
-        border: 1px solid #ccc;
         padding: 20px;
         margin-top: 20px;
     }
@@ -70,32 +67,36 @@
     .FilterS {
       display: flex;
       justify-content: center;
+
     }
 
     .FilterS button {
+      position: absolute;
+      top: 15px;
+      right: 10px;
       font-size: 20px;
       font-weight: bold;
       color:#fe7711;
-      background-color:#343434;
+      background-color:#fff;
       padding: 10px 20px;
       border-radius: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, .06);
-      margin-bottom: 20px
+      margin-bottom: 10px;
+      z-index: 9999;
       
     }
     .filter-dropdown {
       display: none;
-      position: relative;
-      top: 0px;
-      right: 0;
-      background-color: #ffffff;
-      border: 1px solid #ccc;
-      padding: 20px;
-      margin-top: 0px;
+      position: absolute;
+      align-items: end;
+      top: 70px;
+      z-index: 999;
+      width: 100%;
+      height: 150px;
+
     }
 
     .filter-dropdown.active {
-      border: dashed orange;
       display: block;
     }
   </style>
@@ -104,32 +105,6 @@
 
 <body>
 
-   <!-- Navbar Srction -->
-   <nav class="navbar"> 
-    <div class="navbar__container">
-        <div class="navbar__logo__container">
-            <a href="{{ url_for('home') }}" id="navbar__logo"><img src="../static/images/logo.png" alt="logo" id="main__logo"></a>
-            <div class="navbar__weather">
-              <div  id="iddea7dd60ff4ec" a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'>Weather Data Source: <a href="https://sharpweather.com/weather_famagusta/30_days/">30 days weather Famagusta</a></div></div><script async src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"></script>
-        </div>
-        <div class="navbar__toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <a href="{{ url_for('home') }}" class="navbar__links"> Our Services </a>
-          </li>
-          <li class="navbar__item">
-              <a href="{{ url_for('home') }}#about" class="navbar__links"> About </a>
-          </li>
-          <li class="navbar__item">
-              <a href="{{ url_for('emergency') }}" class="navbar__links"> Contact </a>
-          </li>
-      </ul>
-    </div>
-</nav>
 
     
     <div class="FilterS">
@@ -170,6 +145,18 @@
   <div id="marker-list"></div>
 
 
+   <!-- Navbar Srction -->
+   <nav class="navbar_map"> 
+    <div class="navbar__container">
+        <div class="navbar__logo__container">
+            <a href="{{ url_for('home') }}" id="navbar__logo"><img src="../static/images/logo.png" alt="logo" id="main__logo"></a>
+            <div class="navbar__weather">
+              <div  id="iddea7dd60ff4ec" a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'>Weather Data Source: <a href="https://sharpweather.com/weather_famagusta/30_days/">30 days weather Famagusta</a></div></div><script async src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"></script>
+        </div>
+
+    </div>
+</nav>
+
 
   <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.1/maps/maps-web.min.js'></script>
 
@@ -178,7 +165,7 @@
         container: 'map',
         key: 'usdy0TjAJM12NoAT4Z1D4A50G8mnM5N0',
         center: [ 33.919046994423,35.13951063373529],
-        zoom: 14,
+        zoom: 12,
       });
 
       var popupOffsets = {

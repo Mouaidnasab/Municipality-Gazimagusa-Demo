@@ -19,6 +19,19 @@
     z-index: 999;
 }
 
+.navbar_map {
+    position: relative;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+
 .navbar__container {
     display: flex;
     justify-content: space-between;
@@ -91,7 +104,6 @@
 
 @media screen and (max-width: 960px) {
     .navbar__logo__text {
-        position:absolute;
         top: 29px;
         text-decoration: none;
         color: #343434;
@@ -132,7 +144,7 @@
         top:100%;
         opacity: 1;
         transition: all 0.5s ease;
-        z-index: 99;
+        z-index: 999;
         height: 42vh;
         font-size: 1.6rem;
     }
