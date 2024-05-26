@@ -42,38 +42,18 @@
     </div>
 </nav>
 
-    <main class="main_a">
-      <h1 class="Tabs__title_a">Digital Voting</h1>
-      <p class="Tabs__title_a">Note: To vote you have to enter your personal details after clicking “vote”</p>
-      <div class="Main__center_a">
-          <div class="Tabs__container_a">
-              <div class="Tabs__content_a">
-                  <span class="vote_header_a">Streets</span>
-                  <h3 class="h3_disc_a">Did the construction of kaliland road was successful?</h3>
-                  <p>if you agree just vote!</p>
-                  <a href="/template/online-tickets/vote_page.html" style="text-decoration: none;">
-                    <button class="vote_a">Vote</button>
-                  </a>
-                  
-              </div></a>
-          </div>
-
-          <div class="Tabs__container_a">
-              <div class="Tabs__content_a">
-                  <span class="vote_header_a">Football Playground</span>
-                  <h3 class="h3_disc_a">Do you support constructing a big football patch next to macro?</h3>
-                  <p>if you agree just vote!</p>
-                  <a href="/template/online-tickets/vote_page.html" style="text-decoration: none;">
-                    <button class="vote_a">Vote</button>
-                  </a>
-                  
+    <h1 class="Tabs__title_v">Welcome to the Vote Page</h1>
+    <div class="container_sewege_a">
+        <p class="p_vote">Please enter your Citizen ID to vote:</p>
+        <form action="/vote" method="post">
+            <input type="hidden" name="vote_id" value="{{ vote_id }}">
+            <p>Vote ID: 1</p>
+            <input class="citizen_id_input" type="text" name="citizen_id" placeholder="Enter Citizen ID" required>
+            <input class="submit_a" type="submit" value="Submit">
+        </form>
+            
         
-              </div></a>
-
-              
-          </div>
-      </div>
-      </main>
+    </div>
 
   <!-- footer Section -->
   <div class="footer__container">
