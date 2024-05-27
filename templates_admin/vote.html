@@ -13,10 +13,10 @@
     <nav class="navbar">
         <div class="navbar__container">
             <div class="navbar__logo__container">
-                <a href="/" id="navbar__logo">
+                <a href="http://127.0.0.1:4500" id="navbar__logo">
                     <img src="/static/images/logo.png" alt="logo" id="main__logo" />
                 </a>
-                <a href="/" class="navbar__logo__text">Gazimağusa Municipality</a>
+               
             </div>
             <div class="navbar__toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -44,7 +44,7 @@
     <h1 class="Tabs__title">Welcome to the Vote Page</h1>
     <div class="container_sewege">
         <p class="p_vote">Please enter your Citizen ID to vote:</p>
-        <form action="/vote" method="post">
+        <form action="/vote/{{ vote_id }}" method="post">
             <input type="hidden" name="vote_id" value="{{ vote_id }}">
             <p>Vote ID: {{ vote_id }}</p>
             <input class="citizen_id_input" type="text" name="citizen_id" placeholder="Enter Citizen ID" required>
@@ -96,13 +96,13 @@
             <div class="footer__social__div">
                 <div class="footer__image__container">
                     <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum."
-                        id="footer__image"><img src="images/whatsapp.png" alt="logo" id="main__logo"
+                        id="footer__image"><img src="/static/images/whatsapp.png" alt="logo" id="main__logo"
                     /></a>
                     <a href="https://www.facebook.com/GazimagusaBelediyesi"
-                        id="footer__image"><img src="images/facebook.png" alt="logo" id="main__logo"
+                        id="footer__image"><img src="/static/images/facebook.png" alt="logo" id="main__logo"
                     /></a>
                     <a href="https://www.instagram.com/gazimagusabelediyesi/"
-                        id="footer__image"><img src="images/instagram.png" alt="logo" id="main__logo"
+                        id="footer__image"><img src="/static/images/instagram.png" alt="logo" id="main__logo"
                     /></a>
                 </div>
             </div>

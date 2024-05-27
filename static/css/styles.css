@@ -963,6 +963,17 @@ label span {
     font-weight: 1000;
 }
 
+.Tabs__title_v {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #343434;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 1000;
+}
+
 .vote_a{
     background-color: rgb(255, 115, 0);
     color: rgb(255, 255, 255);
@@ -999,6 +1010,18 @@ label span {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
+}
+.p_vote{
+    margin-bottom: 15px;
+}
+
+
+input[type="text"].citizen_id_input{
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .form-group_a {

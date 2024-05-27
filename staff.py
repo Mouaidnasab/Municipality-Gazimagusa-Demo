@@ -97,10 +97,13 @@ def add_news():
                             (body, title, current_time))
                 con.commit()
                 print(f"DEBUG: Inserted {body}, {title}, {current_time} into skill_sharing table")
+                return render_template("list_news.html")
 
         except Exception as e:
             con.rollback()
             print(f"DEBUG: Error in insert operation: {e}")
+
+        x
     return render_template("add_news.html")
 
 

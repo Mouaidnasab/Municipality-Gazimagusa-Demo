@@ -122,25 +122,23 @@ def delete():
             return redirect(url_for('list'))
 
 # Route to handle the voting process
-@app.route("/vote", methods=['GET', 'POST'])
-def vote():
+@app.route("/vote/<vote_id>", methods=['GET', 'POST'])
+def vote(vote_id):
     if request.method == 'POST':
         try:
-            vote_id = request.form['vote_id']
             citizen_id = request.form['citizen_id']
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
             with get_db_connection() as conn:
                 cur = conn.cursor()
-                
                 # Check if the vote already exists
                 cur.execute("SELECT * FROM votes WHERE vote_id = ? AND citizen_id = ?", (vote_id, citizen_id))
                 existing_vote = cur.fetchone()
-                
                 if existing_vote:
                     flash('You have already voted for this option.', 'error')
                 else:
                     # Check if the citizen exists
+                    # cur.execute("SELE* FROM citizens WHERE citizen_id = ?", (citizen_id,))
                     cur.execute("SELECT * FROM citizens WHERE citizen_id = ?", (citizen_id,))
                     citizen = cur.fetchone()
 
@@ -155,20 +153,6 @@ def vote():
             flash(f'Error submitting vote: {e}', 'error')
 
     # Pass the vote_id to the vote.html template
-    vote_id = request.form.get('vote_id') or request.args.get('vote_id')
-    return render_template("vote.html", vote_id=vote_id)
-
-    # Pass the vote_id to the vote.html template
-    vote_id = request.form.get('vote_id') or request.args.get('vote_id')
-    return render_template("vote.html", vote_id=vote_id)
-
-    # Pass the vote_id to the vote.html template
-    vote_id = request.form.get('vote_id') or request.args.get('vote_id')
-    return render_template("vote.html", vote_id=vote_id)
-
-
-    # Pass the vote_id to the vote.html template
-    vote_id = request.args.get('vote_id')
     return render_template("vote.html", vote_id=vote_id)
 
 # Route to list all votes
