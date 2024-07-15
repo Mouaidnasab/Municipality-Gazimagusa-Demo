@@ -121,39 +121,6 @@ def delete():
             flash(msg)
             return redirect(url_for('list'))
 
-# Route to handle the voting process
-@app.route("/vote/<vote_id>", methods=['GET', 'POST'])
-def vote(vote_id):
-    if request.method == 'POST':
-        try:
-            citizen_id = request.form['citizen_id']
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-            with get_db_connection() as conn:
-                cur = conn.cursor()
-                # Check if the vote already exists
-                cur.execute("SELECT * FROM votes WHERE vote_id = ? AND citizen_id = ?", (vote_id, citizen_id))
-                existing_vote = cur.fetchone()
-                if existing_vote:
-                    flash('You have already voted for this option.', 'error')
-                else:
-                    # Check if the citizen exists
-                    # cur.execute("SELE* FROM citizens WHERE citizen_id = ?", (citizen_id,))
-                    cur.execute("SELECT * FROM citizens WHERE citizen_id = ?", (citizen_id,))
-                    citizen = cur.fetchone()
-
-                    if citizen:
-                        cur.execute("INSERT INTO votes (vote_id, citizen_id, date) VALUES (?, ?, ?)",
-                                    (vote_id, citizen_id, current_time))
-                        conn.commit()
-                        flash('Vote submitted successfully!', 'success')
-                    else:
-                        flash('Citizen ID not found, please try again.', 'error')
-        except Exception as e:
-            flash(f'Error submitting vote: {e}', 'error')
-
-    # Pass the vote_id to the vote.html template
-    return render_template("vote.html", vote_id=vote_id)
 
 # Route to list all votes
 @app.route("/list_votes")
