@@ -17,7 +17,7 @@ In static file CSS, JS, and images are stored.
 
 ## Database
 
-To initialize the table run init_db.py.
+To initialize the database run init_db.py.
 
 ## Installation
   
