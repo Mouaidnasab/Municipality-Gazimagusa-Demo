@@ -1,8 +1,5 @@
-{% extends "layout.html" %}
-{% block title %}
-Result
-{% endblock %}
-{% block content %}
+{% extends "layout.html" %} {% block title %} Result {% endblock %} {% block
+content %}
 <h1>{{ msg }}</h1>
-<a href="{{ url_for('home') }}">Return to Home</a>
+<a href="{{ url_for('admin_home') }}">Return to Home</a>
 {% endblock %}

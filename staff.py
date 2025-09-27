@@ -2,28 +2,32 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
 from datetime import datetime
 
-app = Flask(__name__, template_folder='templates_staff')
-app.secret_key = 'supersecretkey'
+app = Flask(__name__, template_folder="templates_staff")
+app.secret_key = "supersecretkey"
 port = 4000
+
 
 # Database setup
 def get_db_connection():
-    conn = sqlite3.connect('database.db')
+    conn = sqlite3.connect("database.db")
     conn.row_factory = sqlite3.Row
     return conn
 
+
 # Home Page route
 @app.route("/")
-def home():
-    return render_template("home.html")
+def staff_home():
+    return render_template("staff_home.html")
+
 
 # Home Page route
-@app.route("/complaint")
+@app.route("/complaint.html")
 def complaint():
-    return render_template("home.html")
+    return render_template("staff_home.html")
 
-@app.route("/blog")
-def blog():
+
+@app.route("/blog.html")
+def staff_blog():
     con = get_db_connection()
     cur = con.cursor()
     cur.execute("SELECT * FROM blog")
@@ -36,11 +40,11 @@ def blog():
 
 
 # Route to delete a blog
-@app.route("/delete_blog", methods=['POST'])
+@app.route("/delete_blog.html", methods=["POST"])
 def delete_blog():
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
-            blog_id = request.form['id']
+            blog_id = request.form["id"]
             with get_db_connection() as con:
                 cur = con.cursor()
                 cur.execute("DELETE FROM blog WHERE blog_id = ?", (blog_id,))
@@ -54,15 +58,15 @@ def delete_blog():
         finally:
             con.close()
             flash(msg)
-            return redirect(url_for('blog'))
+            return redirect(url_for("blog"))
 
 
 # Route to delete a blog reply
-@app.route("/delete_blog_reply", methods=['POST'])
+@app.route("/delete_blog_reply.html", methods=["POST"])
 def delete_blog_reply():
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
-            reply_id = request.form['id']
+            reply_id = request.form["id"]
             print(reply_id)
             with get_db_connection() as con:
                 cur = con.cursor()
@@ -76,27 +80,28 @@ def delete_blog_reply():
         finally:
             con.close()
             flash(msg)
-            return redirect(url_for('blog'))
+            return redirect(url_for("blog"))
 
 
-
-    
-
-@app.route("/add_news", methods=['POST', 'GET'])
+@app.route("/add_news.html", methods=["POST", "GET"])
 def add_news():
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
-            title = request.form['title']
-            body = request.form['body']
+            title = request.form["title"]
+            body = request.form["body"]
             current_time = datetime.now().strftime("%Y-%m-%d")
 
             with get_db_connection() as con:
                 cur = con.cursor()
 
-                cur.execute("INSERT INTO news (body, title, date_added) VALUES (?, ?, ?)",
-                            (body, title, current_time))
+                cur.execute(
+                    "INSERT INTO news (body, title, date_added) VALUES (?, ?, ?)",
+                    (body, title, current_time),
+                )
                 con.commit()
-                print(f"DEBUG: Inserted {body}, {title}, {current_time} into skill_sharing table")
+                print(
+                    f"DEBUG: Inserted {body}, {title}, {current_time} into skill_sharing table"
+                )
                 return render_template("list_news.html")
 
         except Exception as e:
@@ -108,7 +113,7 @@ def add_news():
 
 
 # Route to list all news
-@app.route("/news")
+@app.route("/news.html")
 def news():
     con = get_db_connection()
     cur = con.cursor()
@@ -118,12 +123,13 @@ def news():
     print(f"DEBUG: Retrieved rows: {rows}")
     return render_template("list_news.html", rows=rows)
 
+
 # Route to delete a news
-@app.route("/delete_news", methods=['POST'])
+@app.route("/delete_news.html", methods=["POST"])
 def delete_news():
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
-            news_id = request.form['id']
+            news_id = request.form["id"]
             with get_db_connection() as con:
                 cur = con.cursor()
                 cur.execute("DELETE FROM news WHERE news_id = ?", (news_id,))
@@ -136,12 +142,11 @@ def delete_news():
         finally:
             con.close()
             flash(msg)
-            return redirect(url_for('news'))
-
+            return redirect(url_for("news"))
 
 
 # Route to list all skill sharing
-@app.route("/skill_sharing")
+@app.route("/skill_sharing.html")
 def skill_sharing():
     con = get_db_connection()
     cur = con.cursor()
@@ -153,11 +158,11 @@ def skill_sharing():
 
 
 # Route to delete a skill Sharing
-@app.route("/delete_ss", methods=['POST'])
+@app.route("/delete_ss.html", methods=["POST"])
 def delete_ss():
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
-            ss_id = request.form['id']
+            ss_id = request.form["id"]
             with get_db_connection() as con:
                 cur = con.cursor()
                 cur.execute("DELETE FROM skill_sharing WHERE ss_id = ?", (ss_id,))
@@ -170,11 +175,8 @@ def delete_ss():
         finally:
             con.close()
             flash(msg)
-            return redirect(url_for('skill_sharing'))
-
-
+            return redirect(url_for("skill_sharing"))
 
 
 if __name__ == "__main__":
-    app.run(debug=True,port=4000)
-
+    app.run(debug=True, port=4000)

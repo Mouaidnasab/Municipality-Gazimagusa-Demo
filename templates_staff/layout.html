@@ -3,24 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/styles_admin.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/static/css/styles_admin.css"
+    />
   </head>
   <body>
     <div class="navbar">
-      <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-      <a href="{{ url_for('blog') }}" class="navbar-item"
-        >Blog</a
+      <a href="{{ url_for('staff_home') }}" class="navbar-brand">Home</a>
+      <a href="{{ url_for('staff_blog') }}" class="navbar-item">Blog</a>
+      <a href="{{ url_for('news') }}" class="navbar-item">News</a>
+      <a href="{{ url_for('add_news') }}" class="navbar-item">Add News</a>
+      <a href="{{ url_for('skill_sharing') }}" class="navbar-item"
+        >Skill Sharing</a
       >
-      <a href="{{ url_for('news') }}" class="navbar-item"
-        >News</a
-      >
-      <a href="{{ url_for('add_news') }}" class="navbar-item"
-        >Add News</a
-      >
-      <a href="{{ url_for('skill_sharing') }}" class="navbar-item">Skill Sharing</a> <!-- Add this line -->
-      <a href="{{ url_for('complaint') }}" class="navbar-item">Complaint</a> 
-      <a href="http://127.0.0.1:4500" class="navbar-item">Return to main page</a> <!-- Add this line -->
-
+      <!-- Add this line -->
+      <a href="{{ url_for('complaint') }}" class="navbar-item">Complaint</a>
+      <a href="" class="navbar-item">Return to main page</a>
+      <!-- Add this line -->
     </div>
     <div class="body-content">
       {% block content %} {% endblock %}

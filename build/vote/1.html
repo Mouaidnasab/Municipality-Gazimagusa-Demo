@@ -1,0 +1,116 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/static/css/voting.css" />
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo__container">
+                <a href="../index.html" id="navbar__logo">
+                    <img src="/static/images/logo.png" alt="logo" id="main__logo" />
+                </a>
+               
+            </div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/login.html" class="navbar__links">Login</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/#about" class="navbar__links">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/emergency.html" class="navbar__links">Contact</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Language</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <h1 class="Tabs__title">Welcome to the Vote Page</h1>
+    <div class="container_sewege">
+        <p class="p_vote">Please enter your Citizen ID to vote:</p>
+        <form action="/vote/1" method="post">
+            <input type="hidden" name="vote_id" value="1">
+            <p>Vote ID: 1</p>
+            <input class="citizen_id_input" type="text" name="citizen_id" placeholder="Enter Citizen ID" required>
+            <button type="submit">Vote</button>
+        </form>
+            
+            <!-- Flash messages -->
+            <div class="flash-messages">
+                
+                    
+                
+            </div>
+        </div>
+
+    <!-- Footer Section -->
+    <div class="footer__container">
+        <div class="footer__nav">
+            <div class="footer__nav__div">
+                <a href="/#about" class="footer__nav__text">About</a>
+            </div>
+            <div class="footer__nav__div">
+                <a href="/emergency.html" class="footer__nav__text">Emergency Contact</a>
+            </div>
+            <div class="footer__nav__div">
+                <a href="/" class="footer__nav__text">Our Services</a>
+            </div>
+        </div>
+        <div class="footer__contact">
+            <div class="footer__contact__div"><span>Contact</span></div>
+            <div class="footer__contact__div">
+                <a href="tel:+90(392)6300500" class="footer__contact__text">
+                    +90 (392) 630 05 00
+                </a>
+            </div>
+            <div class="footer__contact__div">
+                <a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text">
+                    info@gazimagusabelediyesi.org
+                </a>
+            </div>
+            <div class="footer__contact__div">
+                <span>Polatpaşa Bulvarı Gazimağusa, KIBRIS</span>
+            </div>
+            <div class="footer__social__div">
+                <div class="footer__image__container">
+                    <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum."
+                        id="footer__image"><img src="/static/images/whatsapp.png" alt="logo" id="main__logo"
+                    /></a>
+                    <a href="https://www.facebook.com/GazimagusaBelediyesi"
+                        id="footer__image"><img src="/static/images/facebook.png" alt="logo" id="main__logo"
+                    /></a>
+                    <a href="https://www.instagram.com/gazimagusabelediyesi/"
+                        id="footer__image"><img src="/static/images/instagram.png" alt="logo" id="main__logo"
+                    /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+    <!-- Flash messages -->
+    
+        
+    
+
+</body>
+</html>
