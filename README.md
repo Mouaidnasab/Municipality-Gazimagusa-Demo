@@ -26,4 +26,5 @@ To initialize the database run init_db.py.
 - create pyhton virtual envirnoment with requirements.txt
 - Run main.py, admin.py, staff.py on separte terminals.
 
-## 
+## Figma Prototype
+https://www.figma.com/proto/xTvUmoVjfnpdENTicfRkk1/municipality-project?node-id=0-1&t=c3HlzPHdOByo1gZC-1
