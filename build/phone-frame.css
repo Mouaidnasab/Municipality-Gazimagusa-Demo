@@ -1,0 +1,87 @@
+/* phone-frame.css (image inlined) */
+:root {
+  /* Size of the outer device art before scaling */
+  --frame-w: 930px;
+  --frame-h: 1370px;
+
+  /* Visible glass area (window) INSIDE your device art */
+  --screen-x: 267px; /* left offset  */
+  --screen-y: 285px; /* top offset   */
+  --screen-w: 400px; /* window width */
+  --screen-h: 800px; /* window height */
+
+  /* Corner radius of the glass (tune this to match your frame) */
+  --corner: 92px;
+
+  /* iPhone-like viewport for the page itself */
+  --iframe-w: 370px;
+  --iframe-h: 844px;
+
+  --stage-bg: #0b0c0f;
+  --min-scale: 0.6;
+  --max-scale: 1;
+}
+
+/* Default scrolling left intact */
+html,
+body {
+  height: auto;
+}
+
+/* Desktop stage */
+body.__phone-stage {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--stage-bg);
+  display: grid;
+  place-items: center;
+}
+
+.phone-frame {
+  position: relative;
+  width: var(--frame-w);
+  height: var(--frame-h);
+  transform-origin: center center;
+}
+
+/* draw the bezel OVER the content */
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("phone-frame.png"); /* or .webp */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  z-index: 2; /* above the screen */
+  pointer-events: none; /* don't block clicks/scroll on the page */
+}
+
+/* the screen (your app) stays underneath the bezel */
+.phone-frame__screen {
+  position: absolute;
+  left: var(--screen-x);
+  top: var(--screen-y);
+  width: var(--screen-w);
+  height: var(--screen-h);
+  background: #000;
+  border-radius: var(--corner);
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* make sure it’s below the bezel */
+}
+
+/* The page itself (mobile viewport) */
+.phone-frame__iframe {
+  width: var(--iframe-w);
+  height: var(--iframe-h);
+  border: 0;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: auto;
+}

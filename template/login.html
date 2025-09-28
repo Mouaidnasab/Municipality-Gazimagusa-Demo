@@ -70,12 +70,18 @@
     <h class="Title" style="color: red">login page under development</h>
     <div style="margin: 20px">
       <a href="url_for('admin_home')"
-        ><button class="help-button" style="margin-bottom: 10px">
+        ><button
+          class="help-button"
+          disabled
+          style="margin-bottom: 10px; background-color: gray"
+        >
           Login to Admin
         </button></a
       >
       <a href="url_for('staff_home')"
-        ><button class="help-button">Login to Staff</button></a
+        ><button class="help-button" style="background-color: gray" disabled>
+          Login to Staff
+        </button></a
       >
     </div>
 

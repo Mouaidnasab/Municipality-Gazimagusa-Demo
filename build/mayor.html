@@ -1,99 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mayor</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-  />
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
 
-     <!-- Navbar Srction -->
-     <nav class="navbar"> 
+    <link rel="stylesheet" href="phone-frame.css" />
+  </head>
+  <body>
+    <div style="margin-top: 70px"></div>
+
+    <!-- Navbar Srction -->
+    <nav class="navbar">
       <div class="navbar__container">
-          <div class="navbar__logo__container">
-              <a href="index.html" id="navbar__logo"><img src="../static/images/logo.png" alt="logo" id="main__logo"></a>
-              <div class="navbar__weather">
-                <div  id="iddea7dd60ff4ec" a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'>Weather Data Source: <a href="https://sharpweather.com/weather_famagusta/30_days/">30 days weather Famagusta</a></div></div><script async src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"></script>
+        <div class="navbar__logo__container">
+          <a href="index.html" id="navbar__logo"
+            ><img src="../static/images/logo.png" alt="logo" id="main__logo"
+          /></a>
+          <div class="navbar__weather">
+            <div
+              id="iddea7dd60ff4ec"
+              a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'
+            >
+              Weather Data Source:
+              <a href="https://sharpweather.com/weather_famagusta/30_days/"
+                >30 days weather Famagusta</a
+              >
+            </div>
           </div>
-          <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-          </div>
-          <ul class="navbar__menu">
-            <li class="navbar__item">
-              <a href="index.html" class="navbar__links"> Our Services </a>
-            </li>
-            <li class="navbar__item">
-                <a href="index.html#about" class="navbar__links"> About </a>
-            </li>
-            <li class="navbar__item">
-                <a href="emergency.html" class="navbar__links"> Contact </a>
-            </li>
+          <script
+            async
+            src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"
+          ></script>
+        </div>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__links"> Our Services </a>
+          </li>
+          <li class="navbar__item">
+            <a href="index.html#about" class="navbar__links"> About </a>
+          </li>
+          <li class="navbar__item">
+            <a href="emergency.html" class="navbar__links"> Contact </a>
+          </li>
         </ul>
       </div>
-  </nav>
-
+    </nav>
 
     <!-- Mayor Title Section -->
-    
+
     <div class="mayor__container">
       <h1 class="h1">Who is</h1>
-      <span > Gazimağusa Municipality Mayor?</span>
-      <div class="mayor__image"><img src="/static/images/mayor_image.png" alt="logo" id="mayor_image"></div>
-
+      <span> Gazimağusa Municipality Mayor?</span>
+      <div class="mayor__image">
+        <img src="/static/images/mayor_image.png" alt="logo" id="mayor_image" />
+      </div>
     </div>
-    
+
     <!-- Mayor description Section -->
     <div class="Mayo__body__div">
-    <h class="Mayor__body">Dr. Süleyman Uluçay, who has been serving as the Mayor of Gazimağusa since December 25, 2022, was born in Balıkesir village, which is located in the Lefkoşa region of Cyprus, in 1962. Due to the inter-communal conflicts in Cyprus, the Uluçay family and the other Turkish Cypriot Family migrated from Balıkesir. Uluçay family migrated first to Cihangir and then to Gazimağusa.
-    </h></div>
+      <h class="Mayor__body"
+        >Dr. Süleyman Uluçay, who has been serving as the Mayor of Gazimağusa
+        since December 25, 2022, was born in Balıkesir village, which is located
+        in the Lefkoşa region of Cyprus, in 1962. Due to the inter-communal
+        conflicts in Cyprus, the Uluçay family and the other Turkish Cypriot
+        Family migrated from Balıkesir. Uluçay family migrated first to Cihangir
+        and then to Gazimağusa.
+      </h>
+    </div>
 
     <!-- Send Massage Section -->
     <h class="Tabs__title">Send Massage to Mayor</h>
     <div class="form">
       <form>
-        <label for="user_id">Citizen/Muhaceret/Visa ID Number:</label><br>
-        <input  class="input__field" type="text" id="user_id" name="user_id" placeholder="Citizen/Muhaceret/Visa ID Number..." required=""><br>
-        <label for="lname">Massage:</label><br>
-        <textarea class="input__field" oninput="auto_grow(this)" type="text" id="massage" name="massage" placeholder="Massage..." required=""></textarea>
+        <label for="user_id">Citizen/Muhaceret/Visa ID Number:</label><br />
+        <input
+          class="input__field"
+          type="text"
+          id="user_id"
+          name="user_id"
+          placeholder="Citizen/Muhaceret/Visa ID Number..."
+          required=""
+        /><br />
+        <label for="lname">Massage:</label><br />
+        <textarea
+          class="input__field"
+          oninput="auto_grow(this)"
+          type="text"
+          id="massage"
+          name="massage"
+          placeholder="Massage..."
+          required=""
+        ></textarea>
       </form>
     </div>
     <div class="mayor__button">
-      <button type="sumbit" >Send</button>
+      <button type="sumbit">Send</button>
     </div>
 
-  <!-- footer Section -->
-  <div class="footer__container">
-    <div class="footer__nav">
-      <div class="footer__nav__div"><a href="index.html#about" class="footer__nav__text"> About </a></div>
-      <div class="footer__nav__div"><a href="emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
-      <div class="footer__nav__div"><a href="index.html" class="footer__nav__text"> Our Services </a></div>
-    </div>
-    <div class="footer__contact">
-      <div class="footer__contact__div"><span >Contact</span></div>
-      <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
-      <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
-      <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
-      <div class="footer__social__div">
-        <div class="footer__image__container">
-          <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="../static/images/whatsapp.png" alt="logo" id="main__logo"></a>
-          <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="../static/images/facebook.png" alt="logo" id="main__logo"></a>
-          <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="../static/images/instagram.png" alt="logo" id="main__logo"></a>
+    <!-- footer Section -->
+    <div class="footer__container">
+      <div class="footer__nav">
+        <div class="footer__nav__div">
+          <a href="index.html#about" class="footer__nav__text"> About </a>
         </div>
-          
+        <div class="footer__nav__div">
+          <a href="emergency.html" class="footer__nav__text">
+            Emergancy Contact
+          </a>
+        </div>
+        <div class="footer__nav__div">
+          <a href="index.html" class="footer__nav__text"> Our Services </a>
+        </div>
+      </div>
+      <div class="footer__contact">
+        <div class="footer__contact__div"><span>Contact</span></div>
+        <div class="footer__contact__div">
+          <a href="tel:+90(392)6300500" class="footer__contact__text">
+            +90 (392) 630 05 00
+          </a>
+        </div>
+        <div class="footer__contact__div">
+          <a
+            href="mailto:info@gazimagusabelediyesi.org"
+            class="footer__contact__text"
+          >
+            info@gazimagusabelediyesi.org
+          </a>
+        </div>
+        <div class="footer__contact__div">
+          <span>Polatpaşa Bulvarı Gazimağusa , KIBRIS</span>
+        </div>
+        <div class="footer__social__div">
+          <div class="footer__image__container">
+            <a
+              href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum."
+              id="footer__image"
+              ><img
+                src="../static/images/whatsapp.png"
+                alt="logo"
+                id="main__logo"
+            /></a>
+            <a
+              href="https://www.facebook.com/GazimagusaBelediyesi"
+              id="footer__image"
+              ><img
+                src="../static/images/facebook.png"
+                alt="logo"
+                id="main__logo"
+            /></a>
+            <a
+              href="https://www.instagram.com/gazimagusabelediyesi/"
+              id="footer__image"
+              ><img
+                src="../static/images/instagram.png"
+                alt="logo"
+                id="main__logo"
+            /></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
 
     <script src="../static/js/app.js"></script>
-</body>
+
+    <script src="phone-frame.js" defer></script>
+  </body>
 </html>

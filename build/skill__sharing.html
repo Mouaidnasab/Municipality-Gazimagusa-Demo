@@ -1,152 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skill Sharing</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="phone-frame.css" />
+  </head>
+  <body>
+    <div style="margin-top: 70px"></div>
 
     <!-- Navbar Srction -->
-    <nav class="navbar"> 
-        <div class="navbar__container">
-            <div class="navbar__logo__container">
-                <a href="index.html" id="navbar__logo"><img src="../static/images/logo.png" alt="logo" id="main__logo"></a>
-                <div class="navbar__weather">
-                  <div  id="iddea7dd60ff4ec" a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'>Weather Data Source: <a href="https://sharpweather.com/weather_famagusta/30_days/">30 days weather Famagusta</a></div></div><script async src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"></script>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <div class="navbar__logo__container">
+          <a href="index.html" id="navbar__logo"
+            ><img src="../static/images/logo.png" alt="logo" id="main__logo"
+          /></a>
+          <div class="navbar__weather">
+            <div
+              id="iddea7dd60ff4ec"
+              a='{"t":"s","v":"1.2","lang":"en","locs":[741],"ssot":"c","sics":"ds","cbkg":"#FFFFFF","cfnt":"#000000","slgp":6,"sdr":"lr","slfs":19,"slbr":15,"slpd":6,"slis":27}'
+            >
+              Weather Data Source:
+              <a href="https://sharpweather.com/weather_famagusta/30_days/"
+                >30 days weather Famagusta</a
+              >
             </div>
-            <div class="navbar__toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a href="index.html" class="navbar__links"> Our Services </a>
-              </li>
-              <li class="navbar__item">
-                  <a href="index.html#about" class="navbar__links"> About </a>
-              </li>
-              <li class="navbar__item">
-                  <a href="emergency.html" class="navbar__links"> Contact </a>
-              </li>
-          </ul>
+          </div>
+          <script
+            async
+            src="https://static1.sharpweather.com/widgetjs/?id=iddea7dd60ff4ec"
+          ></script>
         </div>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__links"> Our Services </a>
+          </li>
+          <li class="navbar__item">
+            <a href="index.html#about" class="navbar__links"> About </a>
+          </li>
+          <li class="navbar__item">
+            <a href="emergency.html" class="navbar__links"> Contact </a>
+          </li>
+        </ul>
+      </div>
     </nav>
-
-
 
     <h class="Tabs__title">Skill Sharing</h>
     <div class="skill__body">
       <a href="add_skill_sharing.html" style="text-decoration: none">
         <div class="button-container">
-            <button class="new-post-button">+</button>
-        </div></a>
+          <button class="new-post-button">+</button>
+        </div></a
+      >
 
-        <section class="skill-sharing">
-            
-            <div class="post" id="post1">
-                <div class="post-info">
-                    <span class="distance">2024-05-28</span>
-                    <div class="type__continer">
-                      <span class="type">electrical</span>
-                      <div class="type__image__container">
-                        <img src="/static/images/electrical.png" id="type__image__id">
-                      </div>
-                    </div>
-                </div>
-                <img src="/static/ss_images/sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg" alt="sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg" class="post-image">
-                <p class="description">I need hwelp</p>
-                <button class="help-button" onclick="showDetails('details1')">HELP</button>
-                <div class="details" id="details1">
-                    <p> Contact: 539112205</p>
-                    <p>Email: a@gmail.com</p>
-                </div>
+      <section class="skill-sharing">
+        <div class="post" id="post1">
+          <div class="post-info">
+            <span class="distance">2024-05-28</span>
+            <div class="type__continer">
+              <span class="type">electrical</span>
+              <div class="type__image__container">
+                <img src="/static/images/electrical.png" id="type__image__id" />
+              </div>
             </div>
-            
-            <div class="post" id="post2">
-                <div class="post-info">
-                    <span class="distance">2024-05-26</span>
-                    <div class="type__continer">
-                      <span class="type">plumbing</span>
-                      <div class="type__image__container">
-                        <img src="/static/images/plumbing.png" id="type__image__id">
-                      </div>
-                    </div>
-                </div>
-                <img src="/static/ss_images/sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg" alt="sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg" class="post-image">
-                <p class="description">I need help in plumbing</p>
-                <button class="help-button" onclick="showDetails('details2')">HELP</button>
-                <div class="details" id="details2">
-                    <p> Contact: 53309890</p>
-                    <p>Email: test@trst.com</p>
-                </div>
-            </div>
-            
-            <div class="post" id="post3">
-                <div class="post-info">
-                    <span class="distance">2024-05-25</span>
-                    <div class="type__continer">
-                      <span class="type">electrical</span>
-                      <div class="type__image__container">
-                        <img src="/static/images/electrical.png" id="type__image__id">
-                      </div>
-                    </div>
-                </div>
-                <img src="/static/ss_images/breaker_broken-89C061C4-9BF9-467B-92B2-45EB47567AEE.jpeg" alt="breaker_broken-89C061C4-9BF9-467B-92B2-45EB47567AEE.jpeg" class="post-image">
-                <p class="description">My Breaker got burned please help</p>
-                <button class="help-button" onclick="showDetails('details3')">HELP</button>
-                <div class="details" id="details3">
-                    <p> Contact: 533018937§</p>
-                    <p>Email: myemail@outlook.com</p>
-                </div>
-            </div>
-            
-        </section>
-
-        <script>
-            function showDetails(id) {
-                var details = document.getElementById(id);
-                if (details.style.display === "none" || details.style.display === "") {
-                    details.style.display = "block";
-                } else {
-                    details.style.display = "none";
-                }
-            }
-
- 
-        </script>
-    </div>
- <!-- footer Section -->
- <div class="footer__container">
-    <div class="footer__nav">
-      <div class="footer__nav__div"><a href="index.html#about" class="footer__nav__text"> About </a></div>
-      <div class="footer__nav__div"><a href="emergency.html" class="footer__nav__text"> Emergancy Contact </a></div>
-      <div class="footer__nav__div"><a href="index.html" class="footer__nav__text"> Our Services </a></div>
-    </div>
-    <div class="footer__contact">
-      <div class="footer__contact__div"><span >Contact</span></div>
-      <div class="footer__contact__div"><a href="tel:+90(392)6300500" class="footer__contact__text"> +90 (392) 630 05 00 </a></div>
-      <div class="footer__contact__div"><a href="mailto:info@gazimagusabelediyesi.org" class="footer__contact__text"> info@gazimagusabelediyesi.org </a></div>
-      <div class="footer__contact__div"><span >Polatpaşa Bulvarı Gazimağusa , KIBRIS</span></div>
-      <div class="footer__social__div">
-        <div class="footer__image__container">
-          <a href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum." id="footer__image"><img src="../static/images/whatsapp.png" alt="logo" id="main__logo"></a>
-          <a href="https://www.facebook.com/GazimagusaBelediyesi" id="footer__image"><img src="../static/images/facebook.png" alt="logo" id="main__logo"></a>
-          <a href="https://www.instagram.com/gazimagusabelediyesi/" id="footer__image"><img src="../static/images/instagram.png" alt="logo" id="main__logo"></a>
+          </div>
+          <img
+            src="/static/ss_images/sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg"
+            alt="sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg"
+            class="post-image"
+          />
+          <p class="description">I need hwelp</p>
+          <button class="help-button" onclick="showDetails('details1')">
+            HELP
+          </button>
+          <div class="details" id="details1">
+            <p>Contact: 539112205</p>
+            <p>Email: a@gmail.com</p>
+          </div>
         </div>
-          
+
+        <div class="post" id="post2">
+          <div class="post-info">
+            <span class="distance">2024-05-26</span>
+            <div class="type__continer">
+              <span class="type">plumbing</span>
+              <div class="type__image__container">
+                <img src="/static/images/plumbing.png" id="type__image__id" />
+              </div>
+            </div>
+          </div>
+          <img
+            src="/static/ss_images/sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg"
+            alt="sink-04B7A354-514A-48DC-B3A4-8AA47E1F0E08.jpeg"
+            class="post-image"
+          />
+          <p class="description">I need help in plumbing</p>
+          <button class="help-button" onclick="showDetails('details2')">
+            HELP
+          </button>
+          <div class="details" id="details2">
+            <p>Contact: 53309890</p>
+            <p>Email: test@trst.com</p>
+          </div>
+        </div>
+
+        <div class="post" id="post3">
+          <div class="post-info">
+            <span class="distance">2024-05-25</span>
+            <div class="type__continer">
+              <span class="type">electrical</span>
+              <div class="type__image__container">
+                <img src="/static/images/electrical.png" id="type__image__id" />
+              </div>
+            </div>
+          </div>
+          <img
+            src="/static/ss_images/breaker_broken-89C061C4-9BF9-467B-92B2-45EB47567AEE.jpeg"
+            alt="breaker_broken-89C061C4-9BF9-467B-92B2-45EB47567AEE.jpeg"
+            class="post-image"
+          />
+          <p class="description">My Breaker got burned please help</p>
+          <button class="help-button" onclick="showDetails('details3')">
+            HELP
+          </button>
+          <div class="details" id="details3">
+            <p>Contact: 533018937§</p>
+            <p>Email: myemail@outlook.com</p>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        function showDetails(id) {
+          var details = document.getElementById(id);
+          if (
+            details.style.display === "none" ||
+            details.style.display === ""
+          ) {
+            details.style.display = "block";
+          } else {
+            details.style.display = "none";
+          }
+        }
+      </script>
+    </div>
+    <!-- footer Section -->
+    <div class="footer__container">
+      <div class="footer__nav">
+        <div class="footer__nav__div">
+          <a href="index.html#about" class="footer__nav__text"> About </a>
+        </div>
+        <div class="footer__nav__div">
+          <a href="emergency.html" class="footer__nav__text">
+            Emergancy Contact
+          </a>
+        </div>
+        <div class="footer__nav__div">
+          <a href="index.html" class="footer__nav__text"> Our Services </a>
+        </div>
+      </div>
+      <div class="footer__contact">
+        <div class="footer__contact__div"><span>Contact</span></div>
+        <div class="footer__contact__div">
+          <a href="tel:+90(392)6300500" class="footer__contact__text">
+            +90 (392) 630 05 00
+          </a>
+        </div>
+        <div class="footer__contact__div">
+          <a
+            href="mailto:info@gazimagusabelediyesi.org"
+            class="footer__contact__text"
+          >
+            info@gazimagusabelediyesi.org
+          </a>
+        </div>
+        <div class="footer__contact__div">
+          <span>Polatpaşa Bulvarı Gazimağusa , KIBRIS</span>
+        </div>
+        <div class="footer__social__div">
+          <div class="footer__image__container">
+            <a
+              href="https://web.whatsapp.com/send?phone=905488166002&text=Merhaba%2C%20Gazimağusa%20Belediyesi%20web%20sitesi%20üzerinden%20size%20yazıyorum."
+              id="footer__image"
+              ><img
+                src="../static/images/whatsapp.png"
+                alt="logo"
+                id="main__logo"
+            /></a>
+            <a
+              href="https://www.facebook.com/GazimagusaBelediyesi"
+              id="footer__image"
+              ><img
+                src="../static/images/facebook.png"
+                alt="logo"
+                id="main__logo"
+            /></a>
+            <a
+              href="https://www.instagram.com/gazimagusabelediyesi/"
+              id="footer__image"
+              ><img
+                src="../static/images/instagram.png"
+                alt="logo"
+                id="main__logo"
+            /></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
 
     <script src="../static/js/app.js"></script>
-</body>
+
+    <script src="phone-frame.js" defer></script>
+  </body>
 </html>

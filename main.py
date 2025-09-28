@@ -204,59 +204,9 @@ def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route("/add_skill_sharing_post", methods=["POST", "GET"])
+@app.route("/add_skill_sharing_post.html")
 def add_skill_sharing_post():
-    msg = ""
-    if request.method == "POST":
-        try:
-            citizen_id = request.form["citizen_id"]
-            type = request.form["type"]
-            description = request.form["description"]
-            phone = request.form["phone"]
-            email = request.form["email"]
-            pic = request.files["pic"]
-            current_time = datetime.now().strftime("%Y-%m-%d")
-
-            with get_db_connection() as con:
-                cur = con.cursor()
-
-                cur.execute(
-                    "SELECT * FROM citizens WHERE citizen_id = ?", (citizen_id,)
-                )
-                citizen = cur.fetchone()
-
-                if citizen:
-                    if pic and allowed_file(pic.filename):
-                        filename = secure_filename(pic.filename)
-                        pic.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-                    else:
-                        filename = "defult_ss.png"
-
-                    cur.execute(
-                        "INSERT INTO skill_sharing (citizen_id, description, phone, email, type, img_name, date_added) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                        (
-                            citizen_id,
-                            description,
-                            phone,
-                            email,
-                            type,
-                            filename,
-                            current_time,
-                        ),
-                    )
-                    con.commit()
-                    msg = "Record successfully added"
-                    print(
-                        f"DEBUG: Inserted {citizen_id}, {type}, {email}, {description}, {phone}, {filename}, {current_time} into skill_sharing table"
-                    )
-                else:
-                    msg = "Citizen ID not found, please try again."
-                    flash("Citizen ID not found, please try again.", "error")
-
-        except Exception as e:
-            con.rollback()
-            print(f"DEBUG: Error in insert operation: {e}")
-    return render_template("add_skill_sharing.html", msg=msg)
+    return render_template("skill__sharing.html")
 
 
 @app.route("/digital__voting.html")
